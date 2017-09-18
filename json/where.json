@@ -1,0 +1,75 @@
+{
+	"provinces" : [
+		{
+			"name" : "北京",
+			"municipality" : "true",
+			"cities" : [
+				{
+					"name" : "北京",
+					"districts" : [
+						{
+							"name" : "昌平区"
+						},
+						{
+							"name" : "朝阳区"
+						},
+						{
+							"name" : "海淀区"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name" : "河南省",
+			"cities" : [
+				{
+					"name" : "郑州",
+					"districts" : [
+						{
+							"name" : "金水区"
+						}
+					]
+				},
+				{
+					"name" : "安阳",
+					"districts" : [
+						{
+							"name" : "殷都区"
+						},
+						{
+							"name" : "北关区"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name" : "河北省",
+			"cities" : [
+				{
+					"name" : "石家庄",
+					"districts" : [
+						{
+							"name" : "XXXX区"
+						},
+						{
+							"name" : "YYYY区"
+						}
+					]
+				},
+				{
+					"name" : "保定",
+					"districts" : [
+						{
+							"name" : "AAAA区"
+						},
+						{
+							"name" : "BBBB区"
+						}
+					]
+				}
+			]
+		}
+	]
+}
