@@ -1,0 +1,390 @@
+<div id="slide">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<a href="#"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201708150931462237510.jpg" /></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="#"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201707211432286927850.jpg" /></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="#"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201708170958066528340.jpg" /></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="#"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201709051149305406920.jpg" /></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="#"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201709051149407119100.jpg" /></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="#"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201701031823271812660.jpg" /></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="#"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201707251543155780580.jpg" /></a>
+			</div>
+		</div>
+		<div class="swiper-pagination">
+			<span class="swiper-pagination-bullet"></span>
+			<span class="swiper-pagination-bullet"></span>
+			<span class="swiper-pagination-bullet"></span>
+			<span class="swiper-pagination-bullet"></span>
+			<span class="swiper-pagination-bullet"></span>
+			<span class="swiper-pagination-bullet"></span>
+
+		</div>
+	</div>
+	<div class="small-banner">
+		<a href="#">
+			<img class="moveimg" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201709121117114935610.jpg" />
+		</a>
+		<a href="#">
+			<img class="moveimg" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201709121117114935610.jpg" />
+		</a>
+	</div>
+</div>
+<!--
+	作者：331341107@qq.com
+	时间：2017-09-15
+	描述：楼层定位
+-->
+<div class="floornav" style="display: none;">
+	<ul>
+		<li>
+			<a index=0>
+				<span>帮你</span>
+				<em>1F</em>
+			</a>
+		</li>
+		<li>
+			<a index=1>
+				<span>白酒</span>
+				<em>2F</em>
+			</a>
+		</li>
+		<li>
+			<a index=2>
+				<span>葡萄</span>
+				<em>3F</em>
+			</a>
+		</li>
+		<li>
+			<a index=3>
+				<span>洋酒</span>
+				<em>4F</em>
+			</a>
+		</li>
+	</ul>
+</div>
+<!--
+	作者：331341107@qq.com
+	时间：2017-09-14
+	描述：各种产品   ----
+-->
+<script id="retui" type="text/html">
+	<ul class="cl">
+		<%for(var i=0;i<data.src.length;i++){%>
+		<li>
+			<a href="#">
+				<img name="moveimg" src="${data.src[i]}" />
+			</a>
+		</li>
+		<%}%>
+	</ul>
+</script>
+<div class="content">
+	<!----------九月热推---------------->
+	<div class="content-re">
+		<div class="floor-pro1">
+			<a href="#" class="more">更多>></a>
+			<span class="hot">
+				九月热推
+				<s></s>
+		    </span>
+		</div>
+		<div class="floor1-bottom">
+
+		</div>
+	</div>
+
+	<!-------帮你宣酒----------------------------------->
+	<script id="helpyou" type="text/html">
+		<div class="floor">
+			<div class="floor-hd">
+				<h3>帮你宣酒</h3>
+				<ul>
+					<% for(var i=0;i<data.heading.length;i++){%>
+					<li index=${i}>
+						${data.heading[i]}
+						<s></s>
+					</li>
+					<%}%>
+				</ul>
+			</div>
+			<div class="floor-bd">
+				<div class="floor-content cl">
+					<div class="Content1 clearfix">
+						<div class="content-left">
+							<div class="slide">
+								<a href="#">
+									<img src="${data.img[0]}" />
+								</a>
+							</div>
+							<div class="cata-flo">
+								<table>
+									<tbody>
+										<tr>
+											<%for(var j=0;j<4;j++){%>
+											<td>
+												<a href="#">${data.lefttop[j]}</a>
+											</td>
+											<%}%>
+										</tr>
+										<tr>
+											<%for(var i=0;i<4;i++){%>
+											<td>
+												<a href="#">${data.leftbottom[i]}</a>
+											</td>
+											<%}%>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="content-brand">
+								<div class="swiper-container swiper-container2">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<%for(var i=0;i<4;i++){%>
+											<a href="#">
+												<img src="${data.img[i+1]}" />
+											</a>
+
+											<%}%>
+										</div>
+										<div class="swiper-slide">
+											<%for(var j=0;j<4;j++){%>
+											<a href="#">
+												<img src="${data.img[j+5]}" />
+											</a>
+
+											<%}%>
+										</div>
+										<div class="swiper-slide">
+											<%for(var k=0;k<1;k++){%>
+											<a href="#">
+												<img src="${data.img[k+9]}" />
+											</a>
+
+											<%}%>
+										</div>
+									</div>
+									<!--
+                                  	作者：331341107@qq.com
+                                  	时间：2017-09-15
+                                  	描述：.swiper-button-next,.swiper-button-prev {}  还没写
+                                  -->
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-button-next"></div>
+								</div>
+							</div>
+						</div>
+						<div class="content-right">
+							<ul class="content-right-img" style="display: block;">
+								<%for(var i=0;i<5;i++){%>
+								<li class="fore${i}">
+									<a href="#"><img src="${data.img[i+10]}"></a>
+								</li>
+								<%}%>
+							</ul>
+							<ul class="content-right-img" style="display: none;">
+								<%for(var i=0;i<5;i++){%>
+								<li class="fore${i}">
+									<a href="#"><img src="${data.img[i+11]}"></a>
+								</li>
+								<%}%>
+							</ul>
+							<ul class="content-right-img" style="display: none;">
+								<%for(var i=0;i<5;i++){%>
+								<li class="fore${i}">
+									<a href="#"><img src="${data.img[i+10]}"></a>
+								</li>
+								<%}%>
+							</ul>
+							<ul class="content-right-img" style="display: none;">
+								<%for(var i=0;i<5;i++){%>
+								<li class="fore${i}">
+									<a href="#"><img src="${data.img[i+10]}"></a>
+								</li>
+								<%}%>
+							</ul>
+						</div>
+						<ul class="Content2 clearfix">
+							<%for(var i=0;i<4;i++){%>
+							<li>
+								<a href="#">
+									<img src="${data.img[i+15]}" />
+								</a>
+							</li>
+							<%}%>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</script>
+	<div class="floor1">
+
+	</div>
+	<div class="floor2">
+
+	</div>
+	<div class="floor3">
+
+	</div>
+	<div class="floor4">
+
+	</div>
+	<div class="Brand-shop">
+		<h3>品牌旗舰店</h3>
+		<div class="content">
+			<div class="left">
+				<a href="#">
+					<img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201708221138345961900.jpg" />
+				</a>
+			</div>
+			<div class="mid">
+				<div class="swiper-container swiper-container3">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<ul>
+								<li>
+									<a href="/brand/323.htm" title="茅台" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_323.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_323.jpg" alt="茅台"></a>
+								</li>
+								<li>
+									<a href="/brand/697.htm" title="拉菲" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_697.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_697.jpg" alt="拉菲"></a>
+								</li>
+								<li>
+									<a href="/brand/322.htm" title="五粮液" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_322.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_322.jpg" alt="五粮液"></a>
+								</li>
+								<li>
+									<a href="/brand/626.htm" title="张裕" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_626.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_626.jpg" alt="张裕"></a>
+								</li>
+								<li>
+									<a href="/brand/915.htm" title="马克斯威" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_915.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_915.jpg" alt="马克斯威"></a>
+								</li>
+								<li>
+									<a href="/brand/956.htm" title="茅台新" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_956.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_956.jpg" alt="茅台新"></a>
+								</li>
+								<li>
+									<a href="/brand/324.htm" title="剑南春" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_324.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_324.jpg" alt="剑南春"></a>
+								</li>
+								<li>
+									<a href="/brand/325.htm" title="洋河" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_325.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_325.jpg" alt="洋河"></a>
+								</li>
+								<li>
+									<a href="/brand/326.htm" title="泸州老窖" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_326.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_326.jpg" alt="泸州老窖"></a>
+								</li>
+								<li>
+									<a href="/brand/330.htm" title="芝华士" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_330.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_330.jpg" alt="芝华士"></a>
+								</li>
+								<li>
+									<a href="/brand/331.htm" title="轩尼诗" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_331.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_331.jpg" alt="轩尼诗"></a>
+								</li>
+								<li>
+									<a href="/brand/332.htm" title="人头马" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_332.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_332.jpg" alt="人头马"></a>
+								</li>
+								<li>
+									<a href="/brand/440.htm" title="国窖1573" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_440.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_440.jpg" alt="国窖1573"></a>
+								</li>
+								<li>
+									<a href="/brand/449.htm" title="红星" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_449.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_449.jpg" alt="红星"></a>
+								</li>
+								<li>
+									<a href="/brand/453.htm" title="华夏长城" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_453.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_453.jpg" alt="华夏长城"></a>
+								</li>
+							</ul>
+						</div>
+						<div class="swiper-slide">
+							<ul>
+								<li>
+									<a href="/brand/473.htm" title="酒鬼" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_473.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_473.jpg" alt="酒鬼"></a>
+								</li>
+								<li>
+									<a href="/brand/491.htm" title="口子窖" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_491.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_491.jpg" alt="口子窖"></a>
+								</li>
+								<li>
+									<a href="/brand/492.htm" title="库玛拉" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_492.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_492.jpg" alt="库玛拉"></a>
+								</li>
+								<li>
+									<a href="/brand/503.htm" title="郎酒" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_503.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_503.jpg" alt="郎酒"></a>
+								</li>
+								<li>
+									<a href="/brand/511.htm" title="小龙船" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_511.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_511.jpg" alt="小龙船"></a>
+								</li>
+								<li>
+									<a href="/brand/538.htm" title="牛栏山" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_538.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_538.jpg" alt="牛栏山"></a>
+								</li>
+								<li>
+									<a href="/brand/561.htm" title="圣卡罗" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_561.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_561.jpg" alt="圣卡罗"></a>
+								</li>
+								<li>
+									<a href="/brand/590.htm" title="西凤" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_590.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_590.jpg" alt="西凤"></a>
+								</li>
+								<li>
+									<a href="/brand/594.htm" title="小糊涂仙" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_594.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_594.jpg" alt="小糊涂仙"></a>
+								</li>
+								<li>
+									<a href="/brand/632.htm" title="杰克丹尼" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_632.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_632.jpg" alt="杰克丹尼"></a>
+								</li>
+								<li>
+									<a href="/brand/662.htm" title="奔富" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_662.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_662.jpg" alt="奔富"></a>
+								</li>
+								<li>
+									<a href="/brand/752.htm" title="习酒" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_752.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_752.jpg" alt="习酒"></a>
+								</li>
+								<li>
+									<a href="/brand/795.htm" title="百利甜" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_795.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_795.jpg" alt="百利甜"></a>
+								</li>
+								<li>
+									<a href="/brand/838.htm" title="天佑德" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_838.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_838.jpg" alt="天佑德"></a>
+								</li>
+								<li>
+									<a href="/brand/851.htm" title="马天尼" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_851.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_851.jpg" alt="马天尼"></a>
+								</li>
+							</ul>
+						</div>
+						<div class="swiper-slide">
+							<ul>
+								<li>
+									<a href="/brand/883.htm" title="龙船康帝" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_883.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_883.jpg" alt="龙船康帝"></a>
+								</li>
+								<li>
+									<a href="/brand/898.htm" title="一道泓" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_898.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_898.jpg" alt="一道泓"></a>
+								</li>
+								<li>
+									<a href="/brand/906.htm" title="鸭溪窖" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_906.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_906.jpg" alt="鸭溪窖"></a>
+								</li>
+								<li>
+									<a href="/brand/938.htm" title="中酒网" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_938.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_938.jpg" alt="中酒网"></a>
+								</li>
+								<li>
+									<a href="/brand/955.htm" title="董酒" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_955.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_955.jpg" alt="董酒"></a>
+								</li>
+								<li>
+									<a href="/brand/958.htm" title="长城" target="_blank"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_958.jpg" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_958.jpg" alt="长城"></a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+			<div class="right">
+				<a href="#">
+					<img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201609211049495626910.jpg" />
+				</a>
+			</div>
+		</div>
+	</div>

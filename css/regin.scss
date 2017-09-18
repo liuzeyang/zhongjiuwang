@@ -1,0 +1,291 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #666666;
+}
+
+li {
+    list-style-type: none;
+}
+
+body {
+    color: #545454;
+    background: #eef3fa;
+    font: 12px/1.5 'microsoft yahei', 'SimSun';
+}
+
+.top {
+    width: 100%;
+    height: 30px;
+    background: #f7f7f7;
+}
+
+.topcenter {
+    width: 990px;
+    height: 100%;
+    margin: 0 auto;
+    line-height: 30px;
+    span {
+        float: left;
+        margin: 0 11px 0 16px;
+        position: relative;
+        cursor: pointer;
+        width: 79px;
+        height: 30px;
+        i {
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            top: 8px;
+            left: -13px;
+            background: url(../img/20130725.png) no-repeat 0 0;
+            cursor: pointer;
+        }
+    }
+    ul {
+        float: right;
+        li {
+            float: left;
+            a {
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+.logo {
+    width: 100%;
+    height: 80px;
+}
+
+.logocenter {
+    width: 990px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 10px 0;
+    position: relative;
+    a {
+        width: 200px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        top: 20px;
+        background: url(../img/logo.png) no-repeat left center;
+    }
+    b {
+        position: absolute;
+        font-size: 30px;
+        text-align: center;
+        background-color: #f1f1f1;
+        width: 150px;
+        height: 46px;
+        top: 28px;
+        left: 210px;
+        margin-left: 20px;
+    }
+}
+
+.bottom {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.bottomcenter {
+    width: 990px;
+    margin: 0 auto;
+    .bt {
+        padding-right: 10px;
+        position: relative;
+        overflow: visible;
+        margin-bottom: -1px;
+        border-bottom: 1px solid #dddddd;
+        height: 32px;
+        line-height: 32px;
+        background: #f2f2f2;
+        span {
+            float: right;
+            a {
+                color: #005AA0;
+            }
+        }
+    }
+}
+
+.regin {
+    padding: 30px 0 20px;
+    border: solid #DDDDDD;
+    border-width: 0 1px 1px;
+    background: #fff;
+}
+
+.form {
+    width: 900px;
+    margin: 30px auto;
+    .item {
+        padding-top: 9px;
+        height: 60px;
+        line-height: 34px;
+        position: relative;
+        z-index: 1;
+    }
+    .label {
+        float: left;
+        width: 190px;
+        text-align: right;
+        font-size: 14px;
+        color: #999;
+        padding-right: 10px;
+        b {
+            margin-right: 5px;
+            font-weight: normal;
+            font-family: "宋体";
+            color: #e3393c;
+        }
+    }
+    .text-icon {
+        float: left;
+        position: relative;
+        width: 270px;
+    }
+    #similar {
+        width: 238px;
+        height: 16px;
+        padding: 10px 35px 10px 5px;
+        border: 1px solid #CCCCCC;
+        color: #999;
+    }
+    i {
+        height: 16px;
+        width: 16px;
+        background: url(../img/login-all-bg.png);
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        z-index: 5;
+    }
+    .icon-phone {
+        background-position: -373px -111px;
+    }
+    .focus {
+        color: #666;
+        line-height: 36px;
+        background: #f7f7f7;
+        border: 1px solid #dddddd;
+        height: 36px;
+        position: absolute;
+        top: 0px;
+        right: -285px;
+        width: 260px;
+        padding: 0 5px;
+    }
+    .error {
+        line-height: 36px;
+        height: 36px;
+        position: absolute;
+        top: 0px;
+        right: -285px;
+        width: 260px;
+        padding: 0 5px;
+        background: #FFEBEB;
+        border: 1px solid #ffbdbe;
+    }
+    .passwoed{
+        .focus{
+            line-height: 18px;
+        }
+        .error{
+            line-height: 18px;
+        }
+    }
+    #check {
+        width: 100px;
+        height: 16px;
+        padding: 10px 25px 10px 5px;
+        border: 1px solid #cccccc;
+        float: left;
+        font-size: 14px;
+        font-family: arial, "宋体";
+        color: #999;
+    }
+    .text-check {
+        img {
+            width: 102px;
+            cursor: pointer;
+            height: 36px;
+            display: block;
+        }
+        .error {
+            top: 8px;
+            right: 154px;
+        }
+    }
+    .icon-password {
+        background-position: -346px -108px;
+        width: 14px;
+        height: 19px;
+    }
+    .icon-ensure {
+        background-position: -346px -108px;
+        width: 14px;
+        height: 19px;
+    }
+    .btns {
+        margin-left: 10px;
+        border: 1px solid #dddddd;
+        padding: 0;
+        width: 106px;
+        height: 36px;
+        background: #f4f4f4;
+        margin-top: 0;
+        text-align: center;
+        line-height: 36px;
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .text-ipcheck {
+        .error {
+            top: 8px;
+            right: 144px;
+        }
+    }
+    a:visited {
+        color: #333;
+        text-decoration: none;
+    }
+    #checkbox {
+        margin: 10px 3px 3px;
+    }
+    .itemnew {
+        label {
+            float: left;
+            font-size: 12px;
+        }
+        a {
+            color: #E3393C;
+        }
+    }
+    #btn {
+        width: 270px;
+        height: 36px;
+        color: #FFF;
+        font-size: 16px;
+        text-indent: -9999px;
+        font-weight: 800;
+        overflow: hidden;
+        background: url(../img/regist-btn.jpg) no-repeat;
+        border: none 0;
+    }
+}
+
+#footer {
+    padding-bottom: 30px;
+    text-align: center;
+    margin: 0 auto;
+    width: 990px;
+    height: 59px;
+}

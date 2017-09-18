@@ -1,0 +1,1 @@
+require.config({paths:{jquery:"../tools/jquery-1.8.3",lazyload:"../tools/jquery.lazyload",jqueryui:"../tools/jquery-ui",swiper:"../tools/swiper.jquery.umd.min",template:"../tools/template",tophtml:"../section/tophtml",homebody:"../section/homebody",template:"../tools/Rio_template",piccheck:"../section/piccheck"}});
