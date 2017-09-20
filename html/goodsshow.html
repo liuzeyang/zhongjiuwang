@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tophtml.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/show.css" />
+	</head>
+	<script id="product" type="text/html">
+		<ul class="list-h cl">
+			<%for(var i=0;i<16;i++){%>
+			<li class="clearfix">
+				<div class="lh-wrap">
+					<div class="p-img">
+						<a target="_blank" href="#">
+							<img class="lazyload" src="${data[1].ImgPath}" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/1_220.png">
+						</a>
+						<div shop_id="0"></div>
+					</div>
+					<div class="p-price">
+						<strong>￥${data[1].Price}</strong>
+
+						<label style="float:right" id="lblOrderCount_95162">成交 <b> ${data[1].SaleCount} </b>笔</label>
+					</div>
+					<div class="p-name">
+						<a target="_blank" href="http://www.zhongjiu.cn/productdetail/95162.htm">
+							52°
+							<font>茅台</font>${data[2].Name} </a>
+					</div>
+					<div class="p-shop-N">
+						<label class="SN" id="lblShopName_95162"><a href="/Shop/Home/1">中酒自营</a></label>
+
+						<label class="shop-cart" id="addCart_95162"><i></i></label>
+					</div>
+				</div>
+				<div class="scale-img">
+					<a href="javascript:;"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/2_50.png" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/2_50.png" data-url-max="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/2_220.png"></a>
+					<a href="javascript:;"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/3_50.png" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/3_50.png" data-url-max="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/3_220.png"></a>
+					<a href="javascript:;"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/4_50.png" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/4_50.png" data-url-max="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/4_220.png"></a>
+					<a href="javascript:;"><img class="lazyload" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/5_50.png" data-url="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/5_50.png" data-url-max="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/95162/5_220.png"></a>
+
+				</div>
+			</li>
+			<%}%>
+		</ul>
+	</script>
+	<script id="hot-product" type="text/html">
+		<h2>热卖单品</h2>
+		<div class="once-produce">
+			<ul>
+			<%for(var i=0;i<data.length;i++){%>
+				<li>
+					<a href="#" title="" target="_blank">
+						<img src="${data[i].ImgPath}" alt="" title="53°茅台王子-酱门王子酱门经典（新包装） 500ml">
+						<p class="name-line">${data[i].Name}</p>
+						<p class="my-price-line-zi">￥<span jdprice="439" jshop="price">${data[i].Price}</span></p>
+					</a>
+				</li>
+				<%}%>
+			</ul>
+		</div>
+	</script>
+	<script id="see" type="text/html">
+		<h2>购买了此类商品的用户还浏览</h2>
+		<div class="more-produce">
+			<ul>
+			<%for(var i=0;i<data.length;i++){%>
+				<li>
+					<a href="#" title="" target="_blank">
+						<img src="${data[i].ImgPath}">
+						<p class="name-line">${data[i].Name}</p>
+						<p class="my-price-line-zi">
+							￥<span jdprice="439" jshop="price">${data[i].Price}</span>
+							<span class="comment">评论数:<em>${data[i].SaleCount}</em></span>
+						</p>
+					</a>
+				</li>
+				<%}%>
+			</ul>
+		</div>
+		</div>
+	</script>
+
+	<body>
+		<div id="top"></div>
+		<div id="list">
+			<div class="brandLogo" style="background:url(http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/Brnner_323.jpg) no-repeat  center center">
+				<div class="wrap1190 mar">
+					<div class="concern">
+						<img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Brand/logo_323.jpg" alt="">
+						<a href="javascript:;"></a>
+					</div>
+					<p class="brand-intro">茅台酒独产于中国的贵州省遵义市仁怀市茅台镇，是汉民族的特产酒，与苏格兰威士忌、法国科涅克白兰地齐名的三大蒸馏酒之一。1915年至今，贵州茅台酒共获得15次国际金奖，连续五次蝉联中国国家名酒称号，与遵义董酒并称贵州省仅有的两大国家名酒，是大曲酱香型白酒的鼻祖，有"国酒"之称，是中国高端白酒之一。</p>
+				</div>
+			</div>
+			<div class="crumb">
+				<div class="crumb-content left">
+					<a href="/" target="_self"><strong>首页&nbsp;&nbsp;&gt;&nbsp;&nbsp;</strong></a><em id="searchKeywords"></em></div>
+				<ul class="select-value left">
+					<li>
+						<a href="/list/0-0-0-1-1-1.htm?shopId=0">全部</a><strong>&nbsp;&gt;&nbsp;</strong>
+					</li>
+					<li>
+						<a href="/list/2-0-0-1-1-1.htm?shopId=0" title="白酒"><strong>白酒</strong></a> <strong>&nbsp;&gt;&nbsp;</strong>
+					</li>
+					<li>
+						<a href="javascript:void(0);" title="茅台"><strong>茅台</strong><b>x</b></a>
+					</li>
+				</ul>
+				<span class="total-p">共<strong id="res_count">15</strong>个商品</span>
+			</div>
+			<div class="bottom">
+				<div class="left">
+					<div class="m" id="refilter">
+						<div class="mt">
+							<h2>所有类目</h2>
+						</div>
+						<div class="mc" style="display: block;">
+							<div class="item fore hover">
+								<h3>
+			                        <b></b>
+			                        <a href="/list/1-0-0-1-1-1.htm" class="">酒类</a>
+                                </h3>
+								<ul>
+
+									<li class="curr">
+										<a href="/list/2-0-0-1-1-1.htm">白酒</a>
+									</li>
+									<li class="">
+										<a href="/list/2-323-0-1-1-1.htm">茅台</a>
+									</li>
+								</ul>
+							</div>
+							<div class="hot-product">
+
+							</div>
+							<div class="see-more">
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="lxnav">
+						<dl>
+							<dt>产地</dt>
+							<dd>
+								<a href="#">贵州</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>香型</dt>
+							<dd>
+								<a href="#">酱香型</a>
+							</dd>
+							<dd>
+								<a href="#">浓香型</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>使用</dt>
+							<dd>
+								<a href="#">聚会用酒</a>
+							</dd>
+							<dd>
+								<a href="#">商业用酒</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>度数</dt>
+							<dd>
+								<a href="#">53%val</a>
+							</dd>
+							<dd>
+								<a href="#">52%val</a>
+							</dd>
+						</dl>
+					</div>
+					<div class="fore1">
+						<dl class="order">
+							<dd class="">
+								<a href="/list/2-323-0-1-1-2.htm?shopId=0" onclick="">默认</a><b></b></dd>
+							<dd class=" order-num">
+								<a href="/list/2-323-0-1-2-1.htm?shopId=0">成交量</a><b></b>
+							</dd>
+							<dd class=" pro-price">
+								<a href="/list/2-323-0-1-3-1.htm?shopId=0">价格</a><b></b>
+							</dd>
+							<dd class=" pro-comment">
+								<a href="/list/2-323-0-1-4-1.htm?shopId=0">评论数</a><b></b>
+							</dd>
+							<dd class="curr">
+								<a href="/list/2-323-0-1-5-2.htm?shopId=0">上架时间</a><b></b>
+							</dd>
+							<dd>
+								<a href="/list/2-323-0-1-5-2.htm?shopId=1" class="jdzy "><i></i>中酒自营</a>
+							</dd>
+						</dl>
+
+						<div class="pagin pagin-m" id="top_pagi">
+							<span class="text">
+                                <a href="/list/2-323-0-1-5-2.htm?shopId=0" class="before">&lt;</a>
+                                <i>1</i>/1
+                                <a href="/list/2-323-0-1-5-2.htm?shopId=0" class="after">&gt;</a>
+                            </span>
+						</div>
+						<span class="clr"></span>
+					</div>
+				</div>
+				<div class="m psearch prebuy plist-n7 no-preview" id="plist">
+
+				</div>
+				<div class="blank_info m">
+					<h2 id="brandinfo">品牌资讯</h2>
+
+					<ul id="titltshow">
+						<li style="width:25%;float:left;text-decoration:underline;">
+							<a href="/brandarticleDetail/491.htm" target="_blank">打造千亿茅台夯实人才基础</a>
+						</li>
+						<li></li>
+						<li style="width:25%;float:left;text-decoration:underline;">
+							<a href="/brandarticleDetail/490.htm" target="_blank">茅台酒装满工匠秉性</a>
+						</li>
+						<li></li>
+						<li style="width:25%;float:left;text-decoration:underline;">
+							<a href="/brandarticleDetail/484.htm" target="_blank">未来三年白酒趋势分析</a>
+						</li>
+						<li></li>
+						<li style="width:25%;float:left;text-decoration:underline;">
+							<a href="/brandarticleDetail/478.htm" target="_blank">千亿茅台离不开金融板块</a>
+						</li>
+						<li></li>
+						<li style="width:25%;float:left;text-decoration:underline;">
+							<a href="/brandarticleDetail/477.htm" target="_blank">茅台开盘再创历史新高</a>
+						</li>
+						<li></li>
+						<li style="width:25%;float:left;text-decoration:underline;">
+							<a href="/brandarticleDetail/476.htm" target="_blank">白酒板块重拾升势</a>
+						</li>
+						<li></li>
+						<li style="width:25%;float:left;text-decoration:underline;">
+							<a href="/brandarticleDetail/466.htm" target="_blank">贵州茅台盘中再创新高</a>
+						</li>
+						<li></li>
+						<li style="width:25%;float:left;text-decoration:underline;">
+							<a href="/brandarticleDetail/465.htm" target="_blank">茅台贪婪与恐惧的再博弈</a>
+						</li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="m clearfix" id="bottom_pager">
+					<div id="pagin-btm" class="pagin fr">
+						<a class="prev-disabled">上一页</a>
+						<a class="current" href="/list/2-323-0-1-5-2.htm">1</a>
+						<a class="next-disabled">下一页</a><span class="page-skip">
+                            <em>&nbsp;&nbsp;共 </em><em id="pageCount">1</em><em>&nbsp;页&nbsp;&nbsp;&nbsp;&nbsp;到第</em>
+                            <input class="jumpto" type="text" value="1" id="jumpInput">
+                            <em>页</em>
+                            <a class="btn-skipsearch" id="pageJumpList" href="javascript:;">确定</a>
+                        </span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="foot"></div>
+		</ body>
+		<script data-main="../js/module/showlist" src="../js/model/require.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

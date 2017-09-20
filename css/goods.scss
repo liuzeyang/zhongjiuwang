@@ -53,57 +53,57 @@ body {
         }
     }
     .choose {
-            position: absolute;
-            width: 435px;
+        position: absolute;
+        width: 435px;
+        background-color: #fff;
+        border: 1px solid #e4e4e4;
+        z-index: 100;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        margin-top: -1px;
+        .addtop {
+            margin: 14px 10px 0;
+            height: 23px;
+            border-bottom: 1px solid #e3393c;
+            width: 415px;
+        }
+        .cho {
+            border-color: #e3393c;
+            border-top-width: 2px;
+            color: #e3393c;
+        }
+        span {
+            border: 1px solid #e0e0e0;
+            border-bottom: none;
+            padding: 0 16px;
+            height: 22px;
+            line-height: 22px;
+            display: inline-block;
+            margin: 0 5px;
             background-color: #fff;
-            border: 1px solid #e4e4e4;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin-top: -1px;
-            .addtop {
-                margin: 14px 10px 0;
-                height: 23px;
-                border-bottom: 1px solid #e3393c;
-                width: 415px;
-            }
-            .cho {
-                border-color: #e3393c;
-                border-top-width: 2px;
-                color: #e3393c;
-            }
-            span {
-                border: 1px solid #e0e0e0;
-                border-bottom: none;
-                padding: 0 16px;
-                height: 22px;
-                line-height: 22px;
-                display: inline-block;
-                margin: 0 5px;
-                background-color: #fff;
+            float: left;
+            cursor: pointer;
+        }
+        .listyle {
+            border-top: 0;
+            width: 420px;
+            display: block;
+            padding: 10px;
+            li {
                 float: left;
+                line-height: 22px;
+                height: 22px;
+                overflow: hidden;
+                margin: 3px 1px 0;
+                padding: 0;
+                width: 82px;
                 cursor: pointer;
             }
-            .listyle {
-                border-top: 0;
-                width: 420px;
-                display: block;
-                padding: 10px;
-                li {
-                    float: left;
-                    line-height: 22px;
-                    height: 22px;
-                    overflow: hidden;
-                    margin: 3px 1px 0;
-                    padding: 0;
-                    width: 82px;
-                    cursor: pointer;
-                }
-                .cur{
-                    background: #F6342F;
-                    color: #fff;
-                }
+            .cur {
+                background: #F6342F;
+                color: #fff;
             }
         }
+    }
     .show {
         float: left;
         width: 490px;
@@ -359,7 +359,6 @@ body {
                 }
             }
         }
-        
     }
 }
 
@@ -454,4 +453,457 @@ body {
             }
         }
     }
+}
+
+.detals {
+    width: 1190px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.right {
+    float: right;
+    width: 910px;
+    position: relative;
+    .mt {
+        overflow: visible;
+        height: 58px;
+        line-height: 58px;
+        border: 1px solid #cbcad0;
+        position: relative;
+    }
+}
+
+.product-details {
+    overflow: visible;
+    padding-top: 2px;
+    margin-bottom: 20px;
+    .float-nav {
+        height: 56px;
+        margin: 2px;
+    }
+    .mt {
+        top: auto;
+        z-index: 5;
+        height: 56px;
+        width: 908px;
+        .tab {
+            margin-left: -1px;
+            overflow: visible;
+        }
+    }
+    .tab {
+        float: left;
+        li {
+            float: left;
+            text-align: center;
+        }
+        a {
+            height: 57px;
+            line-height: 57px;
+            padding: 0 26px;
+            color: #000;
+            font-size: 16px;
+        }
+        .curr {
+            height: 53px;
+            color: #f43a3e;
+            border-top: 4px solid #f43a3e;
+            margin-top: -1px;
+            a {
+                margin: 0;
+                font-size: 16px;
+                height: 54px;
+                line-height: 52px;
+                color: #f43a3e;
+                border-left: 2px solid #ddd;
+                border-right: 2px solid #ddd;
+                position: relative;
+                b {
+                    position: absolute;
+                    border: 7px solid;
+                    border-color: #f43a3e #fff #fff #fff;
+                    left: 45%;
+                }
+            }
+        }
+    }
+    .hl_blue {
+        color: #3254a7;
+        padding: 0 5px;
+    }
+    .detail-list {
+        float: left;
+        padding: 8px;
+        border: solid #cbcad0;
+        border-width: 0 1px 1px;
+        overflow: hidden;
+        zoom: 1;
+        margin-bottom: 20px;
+        li {
+            float: left;
+            width: 33%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 2px 0;
+        }
+    }
+}
+
+.guan-box {
+    width: 910px;
+    margin: 20px auto;
+    overflow: hidden;
+    background: #cbcad0;
+    padding: 2px 0 0 0;
+    /* max-width: 790px; */
+    .lp-list li {
+        width: 225px;
+        margin: 0 0 2px 2px;
+        float: left;
+        background: #fff;
+        position: relative;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        img {
+            height: 100%;
+        }
+        h1 {
+            overflow: hidden;
+            white-space: nowrap;
+            padding-top: 10px;
+        }
+    }
+}
+
+#comment {
+    border-top: 2px solid #999;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    zoom: 1;
+    h2 {
+        padding: 0 12px;
+        font-size: 14px;
+        line-height: 58px;
+    }
+    .mc {
+        padding: 0 12px;
+        font-size: 14px;
+        line-height: 58px;
+    }
+    .rate {
+        float: left;
+        width: 190px;
+        padding: 20px 0 0;
+        text-align: center;
+        strong {
+            font: 400 46px/30px arial;
+            color: #e3393c;
+        }
+        span {
+            color: #999;
+            font-family: arial;
+        }
+    }
+    .percent {
+        float: left;
+        width: 186px;
+        height: 74px;
+        padding: 8px 0;
+        border-right: 1px solid #E4E4E4;
+        dl {
+            padding: 2px 0;
+            overflow: hidden;
+            zoom: 1;
+        }
+        dt {
+            padding: 2px 0;
+            overflow: hidden;
+            zoom: 1;
+        }
+        dd {
+            float: left;
+            width: 100px;
+            height: 10px;
+            margin-top: 6px;
+            overflow: hidden;
+            background: #efefef;
+            div {
+                overflow: hidden;
+                height: 10px;
+                width: 0;
+                background-color: #e3393c;
+            }
+        }
+        span {
+            color: #9C9A9C;
+        }
+    }
+}
+
+#comments-list {
+    overflow: visible;
+    padding-top: 2px;
+}
+
+.mc {
+    .item {
+        position: relative;
+        margin-top: 8px;
+        background: #fff;
+        zoom: 1;
+        border-bottom: 1px solid #e3e3e3;
+    }
+    .user {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        text-align: left;
+        color: #333;
+        width: 100px;
+    }
+    .i-item {
+        padding: 10px 15px 5px;
+        dl {
+            padding: 2px 0;
+            zoom: 1;
+            margin-bottom: 5px;
+        }
+        dt {
+            float: left;
+            width: 130px;
+            text-align: left;
+            color: #9C9A9C;
+        }
+        dd {
+            float: left;
+            width: 450px;
+            color: #333;
+            div {
+                margin-top: 10px;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+    .star {
+        float: left;
+        background-position: -109px -239px;
+        display: inline-block;
+        width: 75px;
+        height: 14px;
+        margin-top: 3px;
+    }
+    .fr {
+        float: right;
+    }
+    .pagin {
+        padding: 0 10px 10px 0;
+    }
+    #comments-list .pagin,
+    #consult .pagin {
+        margin-top: 8px;
+    }
+    #consult {
+        overflow: visible;
+        padding-top: 2px;
+    }
+    .consult-pub {
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        text-decoration: none;
+        a {
+            padding: 4px 10px;
+            font-size: 12px;
+            font-family: simsun;
+        }
+    }
+}
+
+#consult-search {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    overflow: hidden;
+    zoom: 1;
+    .prompt {
+        color: #9C9A9C;
+        overflow: hidden;
+    }
+}
+
+.product-left {
+    width: 250px;
+    position: relative;
+}
+
+.left {
+    float: left;
+    .m {
+        margin-bottom: 10px;
+        overflow: hidden;
+        zoom: 1;
+        .mt {
+            font: 14px/30px 'microsoft yahei';
+            font-weight: normal;
+            overflow: hidden;
+            zoom: 1;
+        }
+    }
+    .mt {
+        font-size: 16px;
+        font-weight: bold;
+        color: #222;
+    }
+    .mc {
+        padding: 8px;
+        font-size: 16px;
+        color: #222;
+    }
+    .m2 {
+        .mc {
+            border: 1px solid #cbcad0;
+            border-top: 0;
+            overflow: hidden;
+        }
+        .mt {
+            border: 1px solid #cbcad0;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 5px;
+            span {
+                font-size: 16px;
+                color: #000;
+                width: 48%;
+                text-align: center;
+                cursor: pointer;
+                position: relative;
+            }
+        }
+        h2 {
+            padding: 0 8px;
+        }
+    }
+    .sp-form-item1 {
+        margin-top: 10px;
+    }
+    p {
+        padding: 2px;
+        margin-bottom: 10px;
+        label {
+            display: inline-block;
+            width: 70px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        input {
+            width: 130px;
+            height: 25px;
+        }
+    }
+    .sp-form-item1 input,
+    .sp-form-item2 input,
+    .sp-form-item3 input {
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+    p.sp-form-item2 input {
+        width: 50px;
+        height: 25px;
+    }
+    .sp-form-item3 input {
+        margin-left: -1px;
+        background: #fff;
+        color: #000;
+        /* padding: 3px 10px; */
+        border-radius: 3px;
+        cursor: pointer;
+        background-color: #e8e9eb;
+        height: 25px;
+        width: 60px;
+        font-size: 12px;
+        border: 1px solid #bdbec2;
+    }
+}
+
+
+.m3 li:first-child {
+    background: none;
+}
+.m3 li .p-img, .m3 li .p-name, .m3 li .p-info {
+    padding: 7px 0 0;
+    text-align: center;
+}
+.m3 li a {
+    color: #222;
+}
+.m3 li .p-img img {
+    width: 210px;
+    height: 210px;
+    display: inline;
+}
+.m3 li .p-info {
+    height: 20px;
+}
+.fl {
+    float: left;
+}
+.m3 .fore1 .p-info s, .m3 .fore2 .p-info s, .m3 .fore3 .p-info s {
+    color: #e53c3f;
+}
+.m3 .p-info s {
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    text-align: center;
+    color: #cdcdcd;
+    text-decoration: none;
+    border: 1px solid #e53c3f;
+    border-radius: 100%;
+}
+.m3 .p-info b {
+    padding-left: 25px;
+    font-weight: 400;
+    color: #666;
+}
+.m3 li .p-price {
+    text-align: center;
+    font-size: 16px;
+}
+.p-price strong, .p-market strong {
+    color: #e3393c;
+    font-weight: 600;
+}
+.m3 li .p-name {
+    line-height: 1.5em;
+    height: 3em;
+    font-size: 14px;
+    padding-top: 15px;
+}
+.p-img, .p-name, .p-price, .p-market, .p-detail {
+    overflow: hidden;
+    float: left;
+}
+.left .m2 .mt span.cur:before {
+    content: '';
+    position: absolute;
+    left: 51px;
+    bottom: -8px;
+    font-size: 0;
+    border-top: 8px solid #cbcad0;
+    border-left: 8px dashed transparent;
+    border-right: 8px dashed transparent;
+}
+
+#sp-hot-sale .mt {
+    overflow: visible;
 }

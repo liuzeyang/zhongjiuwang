@@ -1,5 +1,5 @@
 require(["../model/config"], function() {
-	require(["jquery", "tophtml", "jqueryui"], function($, top, ui) {
+	require(["jquery", "tophtml", "jqueryui","template"], function($, top, ui,tem) {
 		$("#top").load("sub/tophtml.html", function() {
 			top();
 			var t;
@@ -102,54 +102,102 @@ require(["../model/config"], function() {
 				//}, 1000)
 			})
 			$(".address").click(function() {
+				if($(".choose").css("display")=="block"){
+					$(".address").text( $(".pri").text()+$(".city1").text() )
+					$(".choose").hide()
+					return
+				}else{
+					$.ajax({
+					type: "get",
+					url: "http://127.0.0.1:8020/gitspace/zhongjiuwang/json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
+					async: true,
+					//AccessControlAllowOrigin:"*",
+					success: function(data) {
+						city(data["provinces"], ".province")
+						//console.log(data["provinces"][1])
+					}
+				});
+					$(".choose").show()
+					$(".province").show().siblings().hide()
+				}
+			})
+
+			$(".province").click(function(e) {
+				var li = e.target;
+				//console.log($(li))
+				$(li).addClass("cur").siblings().removeClass("cur")
+				$(".pri").text($(li).text())
 				$.ajax({
 					type: "get",
-					url: "http://127.0.0.1:8020/gitspace/zhongjiuwang/json/where.json",//http://www.mango918.com/shop/index.php?act=index&op=json_area
+					url: "http://127.0.0.1:8020/gitspace/zhongjiuwang/json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
 					async: true,
 					//AccessControlAllowOrigin:"*",
-					success:function(data){
-						city(data["provinces"],".province")
-						//console.log(data["provinces"][1])
+					success: function(data) {
+						var citylist = data.provinces.find(function(pro) {
+							return pro.name == $(".pri").text()
+						})
+						city(citylist.cities, ".city")
+						//console.log($(".city").sib)
+						$(".city").show().siblings().hide()
+						$(".city").find("li:first").addClass("cur")
+						$(".city1").text($(".city li:first").text())
 					}
 				});
-				$(".choose").show()
-				
 			})
-			
-			$(".province").click(function(e){
-                var li=e.target;
-                //console.log($(li))
+			$(".city").click(function(e) {
+				var li = e.target;
+				//console.log($(li))
 				$(li).addClass("cur").siblings().removeClass("cur")
-				$(".pri").text( $(li).text() )
-				$.ajax({//-------------------here
+				$(".city1").text($(li).text())
+				$.ajax({
 					type: "get",
-					url: "http://127.0.0.1:8020/gitspace/zhongjiuwang/json/where.json",//http://www.mango918.com/shop/index.php?act=index&op=json_area
+					url: "http://127.0.0.1:8020/gitspace/zhongjiuwang/json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
 					async: true,
 					//AccessControlAllowOrigin:"*",
-					success:function(data){
-						var city
-						city(data["provinces"],".province")
-						//console.log(data["provinces"][1])
+					success: function(data) {
+						var dislist = data.provinces.find(function(pro) {
+							return pro.name == $(".pri").text()
+						}).cities.find(function(cit) {
+							return cit.name == $(".city1").text()
+						}).districts;
+						city(dislist, ".distrct")
+						$(".distrct").show().siblings().hide()
+						$(".dist").text($(".distrct li:first").text())
 					}
 				});
+			})
+			$(".distrct").click(function(e) {
+				var li = e.target
+				$(".dist").text($(li).text())
+				$(li).addClass("cur").siblings().removeClass("cur")
+                
 			})
 			$(".addtop span").click(function() {
-				if($(this).hasClass("cho")){
-					return
+				$(this).addClass("cho").siblings().removeClass("cho")
+			})
+			$.ajax({
+				type:"get",
+				url:"/Product/GetHotSaleProduct?sid=1",
+				async:true,
+				success:function(data){
+					$("#tem").html(tem("hot", data))
 				}
-				
-				$(".choose").show()
+			});
+			$(".mt li").click(function(){
+				$(this).addClass("curr").siblings().removeClass("curr")
+				$("#comment").show().siblings().not(":first").hide()
 			})
 		})
-        function city(data,place){
-        	console.log(11)
-        	for(var i=0;i<data.length;i++){
-        		var li=$("<li>")
-        		//console.log($(li))
-        		$(place).append($(li))
-        		$(li).text(data[i].name)
-        	}
-        }
+ 
+		function city(data, place) {
+			//console.log(11)
+			for(var i = 0; i < data.length; i++) {
+				var li = $("<li>")
+				//console.log($(li))
+				$(place).append($(li))
+				$(li).text(data[i].name)
+			}
+		}
 		$("#foot").load("sub/foothtml.html")
 	})
 })

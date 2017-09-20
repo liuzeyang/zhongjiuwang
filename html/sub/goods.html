@@ -3,6 +3,88 @@
 	时间：2017-09-17
 	描述：goods 商品详情
 -->
+<script id="hot" type="text/html">
+
+	<div id="sp-search" class="m m2">
+		<div class="mt">
+			<h2>本店搜索</h2>
+		</div>
+		<div class="mc">
+			<p class="sp-form-item1">
+				<label for="sp-keyword">关键字</label>
+				<span>
+                        <input type="text" id="sp-keyword" onkeydown="javascript:if(event.keyCode==13){}">
+                    </span>
+			</p>
+			<p class="sp-form-item2">
+				<label for="sp-price">价　格</label>
+				<span>
+                        <input type="text" id="sp-price">
+                        -
+                        <input type="text" id="sp-price1" autocomplete="off" spellcheck="false" onkeydown="javascript:if(event.keyCode==13){}">
+                    </span>
+			</p>
+			<p class="sp-form-item3">
+				<label for="">　　　</label>
+				<span>
+                        <input type="submit" id="shopInSearch" value="搜索">
+                    </span>
+			</p>
+		</div>
+	</div>
+
+	<div id="sp-brand-official" class="m m2 sp-category of-category" style="display: none;">
+		<div class="mt">
+			<h2>同类其他品牌</h2>
+		</div>
+		<div id="brandDivOfficial" class="mc">
+			<dl>
+				<dt><a href="#" target="_blank"><s></s>加载中...</a></dt>
+			</dl>
+		</div>
+	</div>
+	<div id="sp-hot-sale" class="m m2 m3">
+		<div class="mt">
+			<span class="">热门销售</span>
+			<span class="cur">热门关注</span>
+		</div>
+		<div class="mc">
+			<ul id="hotsaleDiv" style="display: none;">
+				<%for(var i=0;i<data.length;i++){%>
+				<li class="fore1">
+					<div class="p-img">
+						<a href="#" target="_blank"><img alt="52°五粮液 500ml(普五水晶盒)" src="${data[i].ImgPath}"></a>
+					</div>
+					<div class="p-name">
+						<a href="#" target="_blank" title="">${data[i].Name}</a>
+					</div>
+					<div class="p-info p-bfc">
+						<div class="p-count fl"><s>1</s><b>热销${data[i].SaleCount}件</b></div>
+						<div class="p-price fr"><strong>￥${data[i].Price}</strong></div>
+					</div>
+				</li>
+				<%}%>
+			</ul>
+			<ul id="hotConcerned" >
+				<%for(var i=0;i<data.length;i++){%>
+				<li class="fore1">
+					<div class="p-img">
+						<a href="/productdetail/6207.htm" target="_blank"><img alt="12°尧喝货清爽型黄酒500ml" src="${data[i].ImgPath}"></a>
+					</div>
+					<div class="p-name">
+						<a href="/productdetail/6207.htm" target="_blank" title="">${data[i].Name}</a>
+					</div>
+					<div class="p-info p-bfc">
+						<div class="p-count fl"><s>1</s><b>关注${data[i].SaleCount}次</b></div>
+						<div class="p-price fr"><strong>￥${data[i].Price}</strong></div>
+					</div>
+				</li>
+				<%}%>
+			</ul>
+		</div>
+	</div>
+
+</script>
 <div class="goods">
 	<div class="goodscenter">
 		<div class="catepath">
@@ -77,14 +159,15 @@
                         -->
 							<div class="showright">
 								<span>配送之</span>
-								<a  class="address">
+								<a class="address">
 									北京 北京市
 								</a>
 								<span>&nbsp;|&nbsp;支持货到付款</span>
 								<div class="choose" style="display: none;">
 									<div class="addtop">
 										<span class="cho pri">北京</span>
-										<span class="city">北京市</span>
+										<span class="city1">北京市</span>
+										<span class="dist">海淀区</span>
 									</div>
 									<div class="addbottom">
 										<ul class="province cl listyle" style="display: block;"></ul>
@@ -141,21 +224,21 @@
 								</div>
 								<div class="showright">
 									<div class="wrap">
-										<a class="jian" >-</a>
-										<a class="jia" >+</a>
+										<a class="jian">-</a>
+										<a class="jia">+</a>
 										<input type="text" name="acount" id="acount" value="0" />
 									</div>
 								</div>
 							</li>
 							<li class="choosebtn">
 								<div class="buy btns">
-									<a  class="append" style="    cursor: default;
+									<a class="append" style="    cursor: default;
     background-color: rgb(194, 194, 194);">
 										<b></b> 立即购买
 									</a>
 								</div>
 								<div class="pass btns">
-									<a  class="append">
+									<a class="append">
 										<b></b> 加入购物车
 									</a>
 								</div>
@@ -175,22 +258,22 @@
 					<div class="picchange">
 						<ul>
 							<li class="on">
-								<a >
+								<a>
 									<img index="1" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/2_50.png" />
 								</a>
 							</li>
-							<li >
-								<a >
+							<li>
+								<a>
 									<img index="2" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/1_50.png" />
 								</a>
 							</li>
 							<li>
-								<a >
+								<a>
 									<img index="3" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/3_50.png" />
 								</a>
 							</li>
 							<li>
-								<a >
+								<a>
 									<img index="4" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/4_50.png" />
 								</a>
 							</li>
@@ -206,13 +289,364 @@
 						<span class="shaleft">收藏商品</span>
 						<span class="sharight">
 							<span>分享到：</span>
-							<a href="#" class="weibo"></a>
-							<a href="#" class="qqspace"></a>
-							<a href="#" class="wechat"></a>
-					    </span>
+						<a href="#" class="weibo"></a>
+						<a href="#" class="qqspace"></a>
+						<a href="#" class="wechat"></a>
+						</span>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+<div class="detals">
+	<div class="right">
+		<div class="product-details">
+			<div class="float-nav">
+				<div class="mt">
+					<ul class="tab">
+						<li class="goods-li curr">
+							<span>
+								<a >商品介绍<b></b></a>
+							</span>
+						</li>
+						<li class="comment-li goodscom">
+							<a href="javascript:;" class="toggle-link">商品评价<b></b>
+								<span id="CommentsU" class="hl_blue">(64)</span></a>
+						</li>
+						<li class="consult-li">
+							<a href="javascript:;" class="toggle-link">商品咨询<b></b>
+								<span id="ConsU" class="hl_blue">(0)</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mc" id="product-detail-1">
+
+				<ul class="detail-list" id="detail-list">
+					<li title="">商品名称：53°名门忠义仁勇关公酒 375ml*4</li>
+					<li>条形码：6902952890514</li>
+
+					<!--加载产品属性和产品副属性-->
+					<li>产地：贵州</li>
+					<li>香型：酱香型</li>
+					<li>适用：商务用酒</li>
+					<li>生产厂家：贵州茅台酒股份有限公司</li>
+					<li>酒精度：53%vol</li>
+					<li>净含量：375*4</li>
+				</ul>
+				<!--加载商品推荐------商品详情---->
+				<div class="guan-box">
+					<ul class="lp-list">
+						<li>
+							<a target="_blank" href="http://www.zhongjiu.cn/productdetail/3890.htm">
+								<div class="lp-icon"> </div>
+								<div class="lp-img"> <img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3890/1_220.png"> </div>
+								<p class="lp-price">￥<span>528</span></p>
+								<h1 class="lp-name">拉菲珍藏波尔多 750ml（6瓶装）</h1> </a>
+						</li>
+						<li>
+							<a target="_blank" href="http://www.zhongjiu.cn/productdetail/80655.htm">
+								<div class="lp-icon"> </div>
+								<div class="lp-img"> <img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/80655/1_220.png"> </div>
+								<p class="lp-price">￥<span>199</span></p>
+								<h1 class="lp-name">52°贵州茅台集团 茅台醇原浆 V20 500ml （6瓶装）</h1> </a>
+						</li>
+						<li>
+							<a target="_blank" href="http://www.zhongjiu.cn/productdetail/3168.htm">
+								<div class="lp-icon"> </div>
+								<div class="lp-img"> <img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3168/1_220.png"> </div>
+								<p class="lp-price">￥<span>98</span></p>
+								<h1 class="lp-name">42°天佑德青稞酒海拔2600 500ml</h1> </a>
+						</li>
+						<li>
+							<a target="_blank" href="http://www.zhongjiu.cn/productdetail/80725.htm">
+								<div class="lp-icon"> </div>
+								<div class="lp-img"> <img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/80725/1_220.png"> </div>
+								<p class="lp-price">￥<span>188</span></p>
+								<h1 class="lp-name">马克斯威酒庄-阳光加州西拉干红葡萄酒 750ml</h1> </a>
+						</li>
+						<li>
+							<a target="_blank" href="http://www.zhongjiu.cn/productdetail/1501.htm">
+								<div class="lp-icon"> </div>
+								<div class="lp-img"> <img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/1501/1_220.png"> </div>
+								<p class="lp-price">￥<span>239</span></p>
+								<h1 class="lp-name">【2012年老酒】酒鬼酒陈酿52度500ml 馥郁香型老酒 卖完年份随机发</h1> </a>
+						</li>
+						<li>
+							<a target="_blank" href="http://www.zhongjiu.cn/productdetail/3400.htm">
+								<div class="lp-icon"> </div>
+								<div class="lp-img"> <img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3400/1_220.png"> </div>
+								<p class="lp-price">￥<span>129</span></p>
+								<h1 class="lp-name">52°泸州老窖头曲 500ml（2瓶装）</h1> </a>
+						</li>
+						<li>
+							<a target="_blank" href="http://www.zhongjiu.cn/productdetail/3414.htm">
+								<div class="lp-icon"> </div>
+								<div class="lp-img"> <img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3414/1_220.png"> </div>
+								<p class="lp-price">￥<span>199</span></p>
+								<h1 class="lp-name">12°张裕干红葡萄酒750ml（6瓶装）</h1> </a>
+						</li>
+						<li>
+							<a target="_blank" href="http://www.zhongjiu.cn/productdetail/2824.htm">
+								<div class="lp-icon"> </div>
+								<div class="lp-img"> <img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/2824/1_220.png"> </div>
+								<p class="lp-price">￥<span>129</span></p>
+								<h1 class="lp-name">52°金剑南K6 500ml</h1> </a>
+						</li>
+					</ul>
+				</div>
+				<p style="text-align: center;"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/12a0b74b24c5498baa8ec944387b374a.jpg" height="399" width="750">
+					<img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/d0fbfef8b2cf4ad785272e158f2222d6.jpg" height="264" width="750">
+					<img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/8114117e674e48d2987b2d6ba5b0c065.jpg" height="380" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/7418b111d9a7491db127e82a2a0d4795.jpg" height="172" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/c738a0da991142dabe0413b77a0d5205.jpg" height="393" width="750">
+					<img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/388aedb6f30647e8aa60a3f26fc6e562.jpg" height="396" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/3f0e0418be564515955936f713ae70de.jpg" height="285" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/63a700b94c304e5ca7be79de948025b2.jpg" height="312" width="750">
+					<img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/bf9152b3be364389bb5f30be5a6b9314.jpg" height="257" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/7617ee5b0e6c4b69aa58827750aec684.jpg" height="313" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/42fee45e139d4e8b813375d42c0ee35c.jpg" height="525" width="750">
+					<img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/b58d84d78e874c999e15f2137a9ebaec.jpg" height="523" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/36c13d78aeea43deb69031ad73aa2181.jpg" height="526" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/5fe054d299604ffa860ba4aa919d822d.jpg" height="523" width="750">
+					<img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/4333fa4aa5974989933a9199440834e2.jpg" height="428" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/bb89684b465e4d45888a73fee23f3b72.jpg" height="277" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/f53906cc860647f7a0deb5742d36ddc4.jpg" height="371" width="750">
+					<img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/97f1d40d690648579997805e3cab48a6.jpg" height="375" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/ffe444d749634de992f81f0bdc83aeb6.jpg" height="309" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/4eb65f3be5b44ee2bf32ae1e786c6cf0.jpg" height="220" width="750">
+					<img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/65336782e8294d43ab9e6188bac449f8.jpg" height="251" width="750"><img alt="" src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3376/Details/b8caeecd760d410d8c383d8b6f501ee1.jpg" height="190" width="750"></p>
+				<div style="text-align: center">
+					<p><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/templates/3/ddfa7fee38f04ae6b9fe39f18592ece7.jpg" title="zhongjiuyoushi-_01.jpg" alt="zhongjiuyoushi-_01.jpg"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/templates/3/82a56ea4a697469f9cb73c374e79b2b1.jpg" title="zhongjiuyoushi-_02.jpg" alt="zhongjiuyoushi-_02.jpg"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/templates/3/dcd9e8cd489348c389de0290bbbd0ab7.jpg" title="zhongjiuyoushi-_03.jpg" alt="zhongjiuyoushi-_03.jpg">
+						<img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/templates/3/463696ad26de4366b65884ebf69a5a5d.jpg" title="zhongjiuyoushi-_04.jpg" alt="zhongjiuyoushi-_04.jpg"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/templates/3/fd87d8ed4be848469116236fec02543c.jpg" title="zhongjiuyoushi-_05.jpg" alt="zhongjiuyoushi-_05.jpg"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/templates/3/ece79edfbb6b42b0b57713945b188756.jpg" title="zhongjiuyoushi-_06.jpg" alt="zhongjiuyoushi-_06.jpg">
+						<img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/templates/3/d79539c223b14e9796ac8cd837a534b5.jpg" title="zhongjiuyoushi-_07.jpg" alt="zhongjiuyoushi-_07.jpg"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/templates/3/27403b401c254d60b0b5ea52b2c6913c.jpg" title="zhongjiuyoushi-_08.jpg" alt="zhongjiuyoushi-_08.jpg"></p>
+				</div>
+			</div>
+			<div id="comment" class="m m1" style="display: none;">
+				<div class="mt">
+					<h2>商品评价</h2>
+				</div>
+				<div class="mc">
+					<div id="i-comment">
+						<div class="rate">
+							<strong>97%</strong> <br>
+							<span>好评度</span>
+						</div>
+						<div class="percent">
+							<dl>
+								<dt>好评<span>(97%)</span></dt>
+								<dd>
+									<div style="width: 97px;"></div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>中评<span>(2%)</span></dt>
+								<dd class="d1">
+									<div style="width: 2px;"> </div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>差评<span>(1%)</span></dt>
+								<dd class="d1">
+									<div style="width: 1px;"> </div>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="comments-list" class="m" style="display: none;">
+				<ul class="tab" id="id_comment_btn">
+					<li class="active">
+						<a href="javascript:;">全部评价<em id="totalComment"></em><em>(64)</em></a>
+					</li>
+					<li>
+						<a href="javascript:;">好评<em id="goodComment"></em><em>(62)</em></a>
+					</li>
+					<li>
+						<a href="javascript:;">中评<em id=""></em><em>(1)</em></a>
+					</li>
+					<li>
+						<a href="javascript:;">差评<em id="badComment"></em><em>(1)</em></a>
+					</li>
+					<li>
+						<a href="javascript:;">有图<em id="hasImages"></em><em>(0)</em></a>
+					</li>
+					<li>
+						<a href="javascript:;">追加评论<em id="hasAppend"></em><em>(0)</em></a>
+					</li>
+					<li class="tab-last"></li>
+				</ul>
+				<div id="comment-0" class="mc">
+					<div class="item">
+						<div class="user">
+							<div class="u-icon">冰与火丶凛冬将至<br><span class="star sa5"></span></div>
+						</div>
+						<div class="i-item">
+							<div class="comment-content clearfix">
+								<dl class="clearfix"><dt>初次评价：<br><span class="date-comment"></span></dt>
+									<dd>看起来是很不错的，当摆件还不错，先摆几年看看吧??
+										<div class="after-service-img clearfix"></div>
+										<div class="preview-img" style="display: none;"><img src=""></div>
+									</dd>
+									<div class="comment-sku"></div>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="user">
+							<div class="u-icon">微酸袅袅22<br><span class="star sa5"></span></div>
+						</div>
+						<div class="i-item">
+							<div class="comment-content clearfix">
+								<dl class="clearfix"><dt>初次评价：<br><span class="date-comment"></span></dt>
+									<dd>挺不错的，还没有品，不知道怎么样，但是应该错不了
+										<div class="after-service-img clearfix"></div>
+										<div class="preview-img" style="display: none;"><img src=""></div>
+									</dd>
+									<div class="comment-sku"></div>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="user">
+							<div class="u-icon">言寺广廷abc<br><span class="star sa5"></span></div>
+						</div>
+						<div class="i-item">
+							<div class="comment-content clearfix">
+								<dl class="clearfix"><dt>初次评价：<br><span class="date-comment"></span></dt>
+									<dd>酒还可以，不满意的是赠品不相符，原应该送贝斯威士忌的，收到货却是闷倒驴300lm，有图为证，自己看看吧。
+										<div class="after-service-img clearfix"></div>
+										<div class="preview-img" style="display: none;"><img src=""></div>
+									</dd>
+									<div class="comment-sku"></div>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="user">
+							<div class="u-icon">yuchunyang1987<br><span class="star sa5"></span></div>
+						</div>
+						<div class="i-item">
+							<div class="comment-content clearfix">
+								<dl class="clearfix"><dt>初次评价：<br><span class="date-comment"></span></dt>
+									<dd>东西收到了才来评价，商品完好无损，但是还没喝，酒应该很不错，不知道跟飞天比会不会差，酒瓶和酒架的做工很细致，送礼很有档次，下次有活动还会购买，好评！！
+										<div class="after-service-img clearfix"></div>
+										<div class="preview-img" style="display: none;"><img src=""></div>
+									</dd>
+									<div class="comment-sku"></div>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="user">
+							<div class="u-icon">sdcywwd<br><span class="star sa5"></span></div>
+						</div>
+						<div class="i-item">
+							<div class="comment-content clearfix">
+								<dl class="clearfix"><dt>初次评价：<br><span class="date-comment"></span></dt>
+									<dd>非常好的酒，双11中酒网优惠非常大，没有及时评是因为包装一直没有打开。
+										<div class="after-service-img clearfix"></div>
+										<div class="preview-img" style="display: none;"><img src=""></div>
+									</dd>
+									<div class="comment-sku"></div>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="user">
+							<div class="u-icon">cupid23<br><span class="star sa5"></span></div>
+						</div>
+						<div class="i-item">
+							<div class="comment-content clearfix">
+								<dl class="clearfix"><dt>初次评价：<br><span class="date-comment"></span></dt>
+									<dd>非常好的商家，中间有些小瑕疵， 不过商家换货非常及时，也特别热情！
+										<div class="after-service-img clearfix"></div>
+										<div class="preview-img" style="display: none;"><img src=""></div>
+										<div class="shop-reply">商家回复：您好，非常感谢您对【中酒网】的支持，非常抱歉给您的生活带来了不便，如商品出现问题，您可以随时联系我们的在线客服，我们都会为您解决的亲，您的建议和意见非常的宝贵，我们的及时反映您的问题，并加以改进，让我们更好的为您服务，再次感谢您对我们的支持，祝您生活愉快-【中酒网】</div>
+									</dd>
+									<div class="comment-sku"></div>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="user">
+							<div class="u-icon">周氏一族8<br><span class="star sa5"></span></div>
+						</div>
+						<div class="i-item">
+							<div class="comment-content clearfix">
+								<dl class="clearfix"><dt>初次评价：<br><span class="date-comment"></span></dt>
+									<dd>售前售后都蛮好的。虽然有点曲折。但是态度能接受。我已经是中酒网的老客户了。希望能一直传承下去。谢谢
+										<div class="after-service-img clearfix"></div>
+										<div class="preview-img" style="display: none;"><img src=""></div>
+									</dd>
+									<div class="comment-sku"></div>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="user">
+							<div class="u-icon">不将就today<br><span class="star sa5"></span></div>
+						</div>
+						<div class="i-item">
+							<div class="comment-content clearfix">
+								<dl class="clearfix"><dt>初次评价：<br><span class="date-comment"></span></dt>
+									<dd>回答 质量非常好，与卖家描述的完全一致，非常满意,真的很喜欢，完全超出期望值，发货速度非常快，包装非常仔细、严实，物流公司服务态度很好，运送速度很快，很满意的一次购物
+										<div class="after-service-img clearfix"></div>
+										<div class="preview-img" style="display: none;"><img src=""></div>
+									</dd>
+									<div class="comment-sku"></div>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="user">
+							<div class="u-icon">风中快乐的箭<br><span class="star sa5"></span></div>
+						</div>
+						<div class="i-item">
+							<div class="comment-content clearfix">
+								<dl class="clearfix"><dt>初次评价：<br><span class="date-comment"></span></dt>
+									<dd>瓶子做工不行，酒没喝不知道真还是假，就只能装饰一下！
+										<div class="after-service-img clearfix"></div>
+										<div class="preview-img" style="display: none;"><img src=""></div>
+									</dd>
+									<div class="comment-sku"></div>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="user">
+							<div class="u-icon">谭文tw<br><span class="star sa5"></span></div>
+						</div>
+						<div class="i-item">
+							<div class="comment-content clearfix">
+								<dl class="clearfix"><dt>初次评价：<br><span class="date-comment"></span></dt>
+									<dd>感谢双11，感谢中酒促销活动，下手名门关公一套，838，20151130生产，关键还带木架子，以前在某酒网花一千大洋买的就没有架子。
+										<div class="after-service-img clearfix"></div>
+										<div class="preview-img" style="display: none;"><img src=""></div>
+									</dd>
+									<div class="comment-sku"></div>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="cl">
+						<div style="padding:8px 0 0 120px;" class="fl"></div>
+						<div id="commentsPage0" class="pagin fr">
+							<a class="current">1</a>
+							<a href="#comments-list" data="0,3376">2</a>
+							<a href="#comments-list" data="0,3376">3</a>
+							<a href="#comments-list" data="0,3376">4</a>
+							<a href="#comments-list" data="0,3376">5</a><span>...</span>
+							<a href="#comments-list" data="3376">6</a>
+							<a href="#comments-list" data="0,3376">7</a>
+							<a class="next" href="#comments-list" data="0,3376,1,1,7">下一页</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="left product-left" id="tem">
+
 	</div>
 </div>
