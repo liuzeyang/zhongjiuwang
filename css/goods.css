@@ -587,9 +587,12 @@ body {
   line-height: 58px;
 }
 #comment .mc {
-  padding: 0 12px;
+  width: 908px;
   font-size: 14px;
   line-height: 58px;
+  overflow: hidden;
+  border: 1px solid #E4E4E4;
+  float: left;
 }
 #comment .rate {
   float: left;
@@ -608,9 +611,8 @@ body {
 #comment .percent {
   float: left;
   width: 186px;
-  height: 74px;
+  height: 138px;
   padding: 8px 0;
-  border-right: 1px solid #E4E4E4;
 }
 #comment .percent dl {
   padding: 2px 0;
@@ -621,16 +623,21 @@ body {
   padding: 2px 0;
   overflow: hidden;
   zoom: 1;
+  height: 35px;
+}
+#comment .percent dt span {
+  height: 19px;
 }
 #comment .percent dd {
-  float: left;
+  float: right;
   width: 100px;
   height: 10px;
-  margin-top: 6px;
+  margin-top: -10px;
   overflow: hidden;
   background: #efefef;
 }
 #comment .percent dd div {
+  float: right;
   overflow: hidden;
   height: 10px;
   width: 0;
@@ -641,18 +648,34 @@ body {
 }
 
 #comments-list {
-  overflow: visible;
+  overflow: hidden;
   padding-top: 2px;
 }
 
-.mc .item {
+#id_comment_btn {
+  height: 40px;
+  background-color: #f7f7f7;
+}
+
+.product-details .tab li {
+  float: left;
+  text-align: center;
+}
+
+a {
+  color: #f43a3e;
+}
+
+.item {
   position: relative;
+  width: 908px;
   margin-top: 8px;
   background: #fff;
   zoom: 1;
   border-bottom: 1px solid #e3e3e3;
 }
-.mc .user {
+
+.user {
   position: absolute;
   top: 10px;
   right: 0;
@@ -660,31 +683,33 @@ body {
   color: #333;
   width: 100px;
 }
-.mc .i-item {
+
+.i-item {
   padding: 10px 15px 5px;
 }
-.mc .i-item dl {
+.i-item dl {
   padding: 2px 0;
   zoom: 1;
   margin-bottom: 5px;
 }
-.mc .i-item dt {
+.i-item dt {
   float: left;
   width: 130px;
   text-align: left;
   color: #9C9A9C;
 }
-.mc .i-item dd {
+.i-item dd {
   float: left;
   width: 450px;
   color: #333;
+  line-height: 18px;
 }
-.mc .i-item dd div {
+.i-item dd div {
   margin-top: 10px;
   position: relative;
   z-index: 1;
 }
-.mc .star {
+.i-item .star {
   float: left;
   background-position: -109px -239px;
   display: inline-block;
@@ -692,27 +717,27 @@ body {
   height: 14px;
   margin-top: 3px;
 }
-.mc .fr {
+.i-item .fr {
   float: right;
 }
-.mc .pagin {
+.i-item .pagin {
   padding: 0 10px 10px 0;
 }
-.mc #comments-list .pagin,
-.mc #consult .pagin {
+.i-item #comments-list .pagin,
+.i-item #consult .pagin {
   margin-top: 8px;
 }
-.mc #consult {
+.i-item #consult {
   overflow: visible;
   padding-top: 2px;
 }
-.mc .consult-pub {
+.i-item .consult-pub {
   position: absolute;
   right: 10px;
   top: 15px;
   text-decoration: none;
 }
-.mc .consult-pub a {
+.i-item .consult-pub a {
   padding: 4px 10px;
   font-size: 12px;
   font-family: simsun;
@@ -826,7 +851,9 @@ body {
   background: none;
 }
 
-.m3 li .p-img, .m3 li .p-name, .m3 li .p-info {
+.m3 li .p-img,
+.m3 li .p-name,
+.m3 li .p-info {
   padding: 7px 0 0;
   text-align: center;
 }
@@ -849,7 +876,9 @@ body {
   float: left;
 }
 
-.m3 .fore1 .p-info s, .m3 .fore2 .p-info s, .m3 .fore3 .p-info s {
+.m3 .fore1 .p-info s,
+.m3 .fore2 .p-info s,
+.m3 .fore3 .p-info s {
   color: #e53c3f;
 }
 
@@ -877,7 +906,8 @@ body {
   font-size: 16px;
 }
 
-.p-price strong, .p-market strong {
+.p-price strong,
+.p-market strong {
   color: #e3393c;
   font-weight: 600;
 }
@@ -889,7 +919,11 @@ body {
   padding-top: 15px;
 }
 
-.p-img, .p-name, .p-price, .p-market, .p-detail {
+.p-img,
+.p-name,
+.p-price,
+.p-market,
+.p-detail {
   overflow: hidden;
   float: left;
 }

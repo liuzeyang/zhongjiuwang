@@ -54,7 +54,7 @@ require(["../model/config"], function() {
 			switch($input.attr("name")) {
 				case "cellphone":
 					{
-						if(val.match(/^1(35)|(32)|(47)|(55)|(38)|(87)|(50)[0-9]{8}/)) {
+						if(val.match(/^1[34578]\d{9}$/)) {
 							flag = true;
 						}
 						break;
@@ -90,16 +90,26 @@ require(["../model/config"], function() {
 					}
 				case "ipcheck":
 					{
-
+                        flag=true;
 						break;
 					}
 			}
 			return flag;
 		}
-		$(".error").each(function(index,item){
+		$("#btn").click(function(){
+			var count=0;
+			$(".error").each(function(index,item){
+				//console.log($(item).css("display")=="none")
 			if($(item).css("display")=="none"){
-				$("#btn").removeAttr("disabled")
+                count++;		
+			}else{
+				alert("请确认你的输入");
+				return;
 			}
+			if(count==5){
+				alert(1111)
+			}
+		})
 		})
 	})
 })

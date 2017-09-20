@@ -36,13 +36,38 @@ require(["../model/config"], function() {
 		//console.log(index)
 		var count = 0;
 		$("#btn").on("click", function() {
+			$.ajax("http://datainfo.duapp.com/shopdata/getuser.php?userID=" + $("#user").val(), {
+				datType: "jsonp",
+				success: function(data) {
+
+					var date = JSON.parse(data.slice(9, -1))
+					console.log(date[0].userID)
+					//data[0].
+					if(data == 0) {
+						$(".alert").hide();
+						$(".error").show();
+						count++;
+					} else {
+						if(date[0].userID == $("#password").val()) {
+							$.cookie("user", "admin", {
+								Path: '/'
+							})
+							self.location = '/html/home.html';
+						} else {
+							$(".alert").hide()
+							$(".error").show()
+							count++;
+						}
+					}
+				}
+			});
 			$.getJSON("../json/user.json", function(data) {
 				data.user.forEach(function(item, i) {
 					//console.log( $("#password").val() )
 					if(item == $("#user").val()) { //账号判断
 						if(data.password[i] == $("#password").val()) { //密码判断
 							var user = $("#user")
-							
+
 							if(count > 3) { //验证码
 								$.getJSON("../json/regin.json", function(data1) {
 									if(data1.val[index] == $("#checkCodeBox").val()) {

@@ -8,26 +8,26 @@ require(["../model/config"], function() {
 					return
 				} else {
 					clearInterval(t);
-					console.log(coo)
+					//console.log(coo)
 					$(".login-regin").html("<span>" + coo + "<span>")
 				}
 			}, 3000)
 			var t;
-			$(".mc").hide();
+			$(".category .mc").hide();
 			$(".cate-all").mouseenter(function() {
-				$(".mc").show();
+				$(".category .mc").show();
 			})
 			$(".cate-all").mouseleave(function() {
 				t = setTimeout(function() {
-					$(".mc").hide();
+					$(".category .mc").hide();
 				}, 300)
 			})
-			$(".mc").mouseenter(function() {
+			$(".category .mc").mouseenter(function() {
 				clearTimeout(t);
-				$(".mc").show();
+				$(".category .mc").show();
 			})
-			$(".mc").mouseleave(function() {
-				$(".mc").hide();
+			$(".category .mc").mouseleave(function() {
+				$(".category .mc").hide();
 			})
 		});
 
@@ -189,7 +189,9 @@ require(["../model/config"], function() {
 
 			})
 			$(".addtop span").click(function() {
+
 				$(this).addClass("cho").siblings().removeClass("cho")
+				$("#comments-list").show()
 			})
 			$.ajax({
 				type: "get",
@@ -198,28 +200,44 @@ require(["../model/config"], function() {
 				success: function(data) {
 					$("#tem").html(tem("hot", data))
 					$("#sp-hot-sale .mt span").click(function() {
-						
-						if($(this).text()=="热门销售"){
+
+						if($(this).text() == "热门销售") {
 							$("#hotConcerned").show().siblings().hide()
-						}else{
+						} else {
 							$("#hotConcerned").hide().siblings().show()
 						}
 						$(this).addClass("cur").siblings().removeClass("cur")
-						
+
 					})
 				}
 			});
 			$.ajax({
-				type:"get",
-				url:"/Product/GetHotConcernedProduct?sid=1",
-				async:true,
-				success:function(data){
+				type: "get",
+				url: "/Product/GetCommentByProduct?pId=496&pageNo=1&pageSize=10&commentType=0",
+				async: true,
+				success: function(data) {
+					console.log(data)
+					$("#comment1").html(tem("com", data))
+				}
+			});
+			$.ajax({
+				type: "get",
+				url: "/Product/GetHotConcernedProduct?sid=1",
+				async: true,
+				success: function(data) {
 					$("#hotConcerned").html(tem("watch", data))
 				}
 			});
 			$(".mt li").click(function() {
+				if($(this).find("a").text() == "商品介绍") {
+					$("#product-detail-1").show()
+					$("#comment").hide()
+				} else {
+					$("#product-detail-1").hide()
+					$("#comment").show()
+				}
 				$(this).addClass("curr").siblings().removeClass("curr")
-				$("#comment").show().siblings().not(":first").hide()
+				//$("#comment").show().siblings().not(":first").hide()
 			})
 
 		})
