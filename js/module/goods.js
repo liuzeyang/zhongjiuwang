@@ -1,7 +1,17 @@
 require(["../model/config"], function() {
-	require(["jquery", "tophtml", "jqueryui","template"], function($, top, ui,tem) {
+	require(["jquery", "tophtml", "jqueryui", "template", "jqcookie"], function($, top, ui, tem, cookie) {
 		$("#top").load("sub/tophtml.html", function() {
 			top();
+			var t = setInterval(function() {
+				var coo = $.cookie("user");
+				if(coo == null) {
+					return
+				} else {
+					clearInterval(t);
+					console.log(coo)
+					$(".login-regin").html("<span>" + coo + "<span>")
+				}
+			}, 3000)
 			var t;
 			$(".mc").hide();
 			$(".cate-all").mouseenter(function() {
@@ -44,7 +54,7 @@ require(["../model/config"], function() {
 			$(".pictrue").mousemove(function(e) {
 				var mouse = {
 					x: e.clientX - offsetPage($(".pictrue").get(0)).left,
-					y: e.clientY - offsetPage($(".pictrue").get(0)).top + document.documentElement.scrollTop
+					y: e.clientY - offsetPage($(".pictrue").get(0)).top + $(window).scrollTop()
 				}
 				//console.log($(document).scrollTop())
 				if(mouse.x >= 50 && mouse.x <= 300 && mouse.y >= 50 && mouse.y <= 300) {
@@ -65,7 +75,7 @@ require(["../model/config"], function() {
 				}
 				//console.log($(".move").position())
 			})
-			$(".picchange").find("img").click(function() {
+			$(".picchange").find("img").mouseenter(function() {
 				console.log($(".small"))
 				var ssss = $(this).attr("src").replace("_50", "");
 				$(".small").attr("src", ssss)
@@ -97,26 +107,32 @@ require(["../model/config"], function() {
 					right: 0
 				}, 500).remove()
 				//var t = setTimeout(function() {
-				$("#right_cart").find("em").text($("#acount").val());
+				var count = $("#acount").val()
+				$("#right_cart").find("em").text(count);
+				$.cookie('goods', null);
+				$.cookie("goods", count, {
+					Path: '/'
+				})
+
 				//clearTimeout(t)
 				//}, 1000)
 			})
 			$(".address").click(function() {
-				if($(".choose").css("display")=="block"){
-					$(".address").text( $(".pri").text()+$(".city1").text() )
+				if($(".choose").css("display") == "block") {
+					$(".address").text($(".pri").text() + $(".city1").text())
 					$(".choose").hide()
 					return
-				}else{
+				} else {
 					$.ajax({
-					type: "get",
-					url: "http://127.0.0.1:8020/gitspace/zhongjiuwang/json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
-					async: true,
-					//AccessControlAllowOrigin:"*",
-					success: function(data) {
-						city(data["provinces"], ".province")
-						//console.log(data["provinces"][1])
-					}
-				});
+						type: "get",
+						url: "../json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
+						async: true,
+						//AccessControlAllowOrigin:"*",
+						success: function(data) {
+							city(data["provinces"], ".province")
+							//console.log(data["provinces"][1])
+						}
+					});
 					$(".choose").show()
 					$(".province").show().siblings().hide()
 				}
@@ -129,7 +145,7 @@ require(["../model/config"], function() {
 				$(".pri").text($(li).text())
 				$.ajax({
 					type: "get",
-					url: "http://127.0.0.1:8020/gitspace/zhongjiuwang/json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
+					url: "../json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
 					async: true,
 					//AccessControlAllowOrigin:"*",
 					success: function(data) {
@@ -151,7 +167,7 @@ require(["../model/config"], function() {
 				$(".city1").text($(li).text())
 				$.ajax({
 					type: "get",
-					url: "http://127.0.0.1:8020/gitspace/zhongjiuwang/json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
+					url: "../json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
 					async: true,
 					//AccessControlAllowOrigin:"*",
 					success: function(data) {
@@ -170,25 +186,44 @@ require(["../model/config"], function() {
 				var li = e.target
 				$(".dist").text($(li).text())
 				$(li).addClass("cur").siblings().removeClass("cur")
-                
+
 			})
 			$(".addtop span").click(function() {
 				$(this).addClass("cho").siblings().removeClass("cho")
 			})
 			$.ajax({
-				type:"get",
-				url:"/Product/GetHotSaleProduct?sid=1",
-				async:true,
-				success:function(data){
+				type: "get",
+				url: "/Product/GetHotSaleProduct?sid=1",
+				async: true,
+				success: function(data) {
 					$("#tem").html(tem("hot", data))
+					$("#sp-hot-sale .mt span").click(function() {
+						
+						if($(this).text()=="热门销售"){
+							$("#hotConcerned").show().siblings().hide()
+						}else{
+							$("#hotConcerned").hide().siblings().show()
+						}
+						$(this).addClass("cur").siblings().removeClass("cur")
+						
+					})
 				}
 			});
-			$(".mt li").click(function(){
+			$.ajax({
+				type:"get",
+				url:"/Product/GetHotConcernedProduct?sid=1",
+				async:true,
+				success:function(data){
+					$("#hotConcerned").html(tem("watch", data))
+				}
+			});
+			$(".mt li").click(function() {
 				$(this).addClass("curr").siblings().removeClass("curr")
 				$("#comment").show().siblings().not(":first").hide()
 			})
+
 		})
- 
+
 		function city(data, place) {
 			//console.log(11)
 			for(var i = 0; i < data.length; i++) {

@@ -8,6 +8,7 @@ require.config({
 		"tophtml":"../section/tophtml",
 		"homebody":"../section/homebody",
         "template":"../tools/Rio_template",
-        "piccheck":"../section/piccheck"
+        "piccheck":"../section/piccheck",
+        "jqcookie":"../tools/jquery.cookie"
 	}
 })

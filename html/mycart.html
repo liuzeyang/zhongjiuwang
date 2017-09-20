@@ -8,8 +8,35 @@
 		<meta charset="utf-8" />
 		<title>购物车结算</title>
 		<link href="../css/common.css" rel="stylesheet" />
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link href="../css/cart.css" rel="stylesheet" />
 	</head>
+	<script id="count" type="text/html">
+		
+		<div class="item_form cl">
+			<div class="cell p-checkbox"> <input class="checkbox" type="checkbox" data-cartid="16445" name="checkItem" checked="" value="1" sku="3568_0_0_0"> </div>
+			<div class="cell p-goods">
+				<div class="p-img">
+					<a href="/product/detail/3568" target="_blank"><img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3568/1_50.png" alt=""></a>
+				</div>
+				<div class="p-name">
+					<a href="/product/detail/3568" target="_blank">拉菲传奇波尔多 750ml（6瓶装）<br></a><br></div>
+				<div class="p-code">商品货号：120495298300</div>
+			</div>
+			<div class="cell p-price"><span class="price">¥599.00</span></div>
+			<div class="cell p-quantity">
+				<div class="quantity-form">
+					<a  class="jian" >-</a> 
+					<input type="text" class="quantity-text" value="" name="count" sku="3568_0_0_0">
+					<a  class="jia" >+</a>
+				</div>
+			</div>
+			<div class="cell p-remove">
+				<a class="cart-remove" href="">删除</a>
+			</div>
+		</div>
+		
+	</script>
 
 	<body>
 
@@ -188,7 +215,20 @@
 							<div class="column t-action">操作</div>
 						</div>
 						<div id="product-list" class="cart-tbody">
-							<div style=" padding:30px 0; background:url('/Images/dg_loading.gif')  center no-repeat;"></div>
+							<div class="cart-toolbar cl">
+								<span class="column t-checkbox form">     
+								<input type="checkbox" style="margin: 5px 5px 0 9px;" class="shopSelect" value="1" name="checkShop" checked="checked">   
+								<label for="">
+									<a href="/shop/home/1">中酒自营</a>
+								</label>                    
+							    </span>
+							<div class="item item_selected" id="product-1-3568">
+								<section class="mj" id="manjian-3568"></section>
+								<div id="lala">
+							    	
+							    </div>
+
+							</div>
 						</div>
 
 						<div class="ui-ceilinglamp-1">
@@ -273,7 +313,12 @@
 
 				</ul>
 			</div>
-
+            <div id="dialog" title="Basic dialog">
+                 <p>
+                                                            确定要从购物车移出该商品吗？
+                    <span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>	
+                 </p>
+            </div>
 		</div>
 		<input type="hidden" value="2" id="hidAuditStatus" />
 		<input type="hidden" value="1" id="hidSaleStatus" />

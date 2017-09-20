@@ -29,13 +29,8 @@ require(["../model/config"], function() {
 				$(".see-more").html(tem("see", data))
 			}
 		});
-		var t;
-		t = setTimeout(function() {
-			$(".list-h li").mouseenter(function() {
-				$(this).find(".scale-img").show()
-			})
-		}, 300)
-
+		
+		
 		$("#foot").load("sub/foothtml.html")
 	})
 })

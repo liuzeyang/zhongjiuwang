@@ -1,5 +1,5 @@
 require(["../model/config"], function() {
-	require(["jquery", "piccheck"], function($, piccheck) {
+	require(["jquery", "piccheck", "jqcookie"], function($, piccheck, cookie) {
 		//2017-9-17  login.js  cookie 还没写 写完再添加
 		$(".righttop li").on("mousedown", function() {
 			//console.log($(this).attr("name"))
@@ -12,7 +12,7 @@ require(["../model/config"], function() {
 				$("#section1").hide().siblings("#section2").show()
 			}
 		})
-        //index 找不到 需要帮助
+		//index 找不到 需要帮助
 		var index;
 		$.getJSON("../json/regin.json", function(data) {
 			index = Math.floor(Math.random() * 4);
@@ -41,15 +41,23 @@ require(["../model/config"], function() {
 					//console.log( $("#password").val() )
 					if(item == $("#user").val()) { //账号判断
 						if(data.password[i] == $("#password").val()) { //密码判断
+							var user = $("#user")
+							
 							if(count > 3) { //验证码
 								$.getJSON("../json/regin.json", function(data1) {
 									if(data1.val[index] == $("#checkCodeBox").val()) {
-										alert(111) //跳转新页面
+										$.cookie("user", "admin", {
+											Path: '/'
+										})
+										self.location = '/html/home.html'; //跳转新页面
 									}
 								})
 
 							} else {
-								alert(111) //跳转新页面
+								$.cookie("user", "admin", {
+									Path: '/'
+								})
+								self.location = '/html/home.html'; //跳转新页面
 							}
 						} else {
 							$(".alert").hide();

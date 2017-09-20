@@ -1,7 +1,18 @@
 require(["../model/config"], function() {
-	require(["jquery", "tophtml", "homebody", "swiper"], function($, top, homebody, swp) {
+	require(["jquery", "tophtml", "homebody", "swiper","jqcookie"], function($, top, homebody, swp,cookie) {
 		$("#top").load("sub/tophtml.html", function() {
 			top();
+			var t=setInterval(function(){
+				var coo=$.cookie("user");
+				if(coo==null){
+					return
+				}else{
+					clearInterval(t);
+					console.log(coo)
+					$(".login-regin").html("<span>"+coo+"<span>")
+				}
+			},3000)
+//			$(".login-regin").html("<span>"+$.cookie("user")+"<span>")
 		});
 		$("#home").load("sub/homebody.html", function() {
 			new Promise(homebody).then(function() { //  需要保证模板加载完成

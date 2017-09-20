@@ -285,7 +285,6 @@
     position: relative;
     height: 218px;
     width: 218px;
-    transition: border 0.3s ease-in 0s;
     text-align: center;
 }
 
@@ -388,12 +387,14 @@
     border: 1px solid #c4354c;
     border-top: none;
     background-color: #fff;
+    top: -10px;
+    left: -1px;
 }
 
 #plist.plist-n7 div.scale-img a {
     float: left;
     display: inline-block;
-    margin-right: 11px;
+    margin-right: 9px;
 }
 
 #plist.plist-n7 div.scale-img a img {
