@@ -62,6 +62,16 @@ require(["../model/config"], function() {
 				opacity: 0
 			}, 400)
 		})
+		$(".checkall").click(function() {
+			console.log(11)
+			if($(".checkall").attr("checked") == "checked") {
+				$(".cart-toolbar").find("input").attr("checked", "checked")
+				$(".checkall").attr("checked", "checked")
+			} else {
+				$(".cart-toolbar").find("input").removeAttr("checked")
+				$(".checkall").removeAttr("checked")
+			}
+		})
 		var count = $.cookie('goods');
 		$("#lala").html(tem("count"));
 		$(".quantity-text").val(count);

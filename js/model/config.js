@@ -9,6 +9,7 @@ require.config({
 		"homebody":"../section/homebody",
         "template":"../tools/Rio_template",
         "piccheck":"../section/piccheck",
-        "jqcookie":"../tools/jquery.cookie"
+        "jqcookie":"../tools/jquery.cookie",
+        "funpara":"../section/funParabola"
 	}
 })

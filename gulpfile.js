@@ -51,7 +51,20 @@ gulp.task("webserver", function() {
 						  'api' : '' // remove base path
 						}*/
 					}),
-					
+					proxy('/shopdata',{
+						target: 'http://datainfo.duapp.com', // target host
+						changeOrigin: true, // needed for virtual hosted sites
+						/*pathRewrite: {
+						  'api' : '' // remove base path
+						}*/
+					}),
+					proxy('/shop',{
+						target: 'http://www.mango918.com', // target host
+						changeOrigin: true, // needed for virtual hosted sites
+						/*pathRewrite: {
+						  'api' : '' // remove base path
+						}*/
+					})
 				]
 			})
 		)

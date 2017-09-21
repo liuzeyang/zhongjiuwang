@@ -41,15 +41,16 @@
         }
     }
 }
+
 //楼层导航
-.floornav{
+.floornav {
     width: 38px;
     position: fixed;
-    background:#FFF;
-    left:50%;
+    background: #FFF;
+    left: 50%;
     top: 50%;
     margin-left: -650px;
-    a{
+    a {
         width: 36px;
         height: 30px;
         line-height: 30px;
@@ -57,21 +58,22 @@
         text-align: center;
         display: block;
         margin: 0 auto;
-        border-bottom:1px dotted #c9c9cc;
+        border-bottom: 1px dotted #c9c9cc;
         color: #6255352;
         cursor: pointer;
-        span{
+        span {
             display: none;
         }
     }
-    .over{
-            background: #e3393c;
-            span{
-                display: inline;
-                color: #FFF
-            }
+    .over {
+        background: #e3393c;
+        span {
+            display: inline;
+            color: #FFF
         }
+    }
 }
+
 //----------------------------floors
 .content {
     position: relative;
@@ -252,8 +254,8 @@
     .swiper-button-next {
         width: 20px;
         height: 40px;
-        background: url(../img/nextpre.png) no-repeat ;
-        background-position:-29px 0 ;
+        background: url(../img/nextpre.png) no-repeat;
+        background-position: -29px 0;
         position: absolute;
         right: 5px;
         top: 62px;
@@ -262,8 +264,8 @@
     .swiper-button-prev {
         width: 20px;
         height: 40px;
-        background: url(../img/nextpre.png) no-repeat ;
-        background-position:0 0 ;
+        background: url(../img/nextpre.png) no-repeat;
+        background-position: 0 0;
         position: absolute;
         left: 5px;
         top: 62px;
@@ -293,6 +295,27 @@
     }
     .fore4 {
         margin-top: 10px;
+    }
+    .content-right-tab {
+        .fore0,
+        .fore1,
+        .fore2,
+        .fore3,
+        .fore4 {
+            margin: 0;
+        }
+        li {
+            width: 160px;
+            height: 205px;
+            padding: 10px 10px;
+            border-right: 1px solid #f3f3f3;
+            border-bottom: 1px solid #f3f3f3;
+            float: left;
+            img {
+                width: 160px;
+                height: 160px;
+            }
+        }
     }
 }
 

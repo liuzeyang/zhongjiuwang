@@ -30,5 +30,9 @@ define(["jquery"], function($) {
 		 $(".side-cart").on("mouseleave",function(){
 		 	$(this).css({background:"#2a2a2a"})
 		 })
+		 //边框显示
+		 $("#right_cart").click(function(){
+		 	
+		 })
 	 }	
 })

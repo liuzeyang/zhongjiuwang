@@ -1,18 +1,41 @@
 require(["../model/config"], function() {
-	require(["jquery", "tophtml", "homebody", "swiper","jqcookie"], function($, top, homebody, swp,cookie) {
+	require(["jquery", "tophtml", "homebody", "swiper", "jqcookie"], function($, top, homebody, swp, cookie) {
 		$("#top").load("sub/tophtml.html", function() {
 			top();
-			var t=setInterval(function(){
-				var coo=$.cookie("user");
-				if(coo==null){
+			var t = setInterval(function() {
+				var coo = $.cookie("user");
+				if(coo == null) {
 					return
-				}else{
+				} else {
 					clearInterval(t);
 					console.log(coo)
-					$(".login-regin").html("<span>"+coo+"<span>")
+					$(".login-regin").html("<span>" + coo + "<span>")
 				}
-			},3000)
-//			$(".login-regin").html("<span>"+$.cookie("user")+"<span>")
+			}, 3000)
+			//			$(".login-regin").html("<span>"+$.cookie("user")+"<span>")
+			$("#right_cart").on("mousedown", function(e) {
+				e.stopPropagation()
+				$(".side-content").show()
+				$(".right-side").css({
+					right: -200
+				}).animate({
+					right: 0
+				}, 300)
+			})
+			var count = $.cookie('goods');
+			$(".count").text(count);
+			$(".s-num span").text(count);
+			$(".s-g-price").text(parseInt(count)*599);
+			$(".cart-shop-price").text(parseInt(count)*599);
+			$("#s-total-money").text(parseInt(count)*599);
+			$(".s-total-num").text(count);
+			$(".checkall").click(function(){
+				if($(".checkall").attr("checked")=="checked"){
+					$(".cart-list").find("input").attr("checked","checked")
+				}else{
+					$(".cart-list").find("input").removeAttr("checked")
+				}
+			})
 		});
 		$("#home").load("sub/homebody.html", function() {
 			new Promise(homebody).then(function() { //  需要保证模板加载完成
@@ -20,7 +43,7 @@ require(["../model/config"], function() {
 				$(".floor-hd ul li:not(:last)").on("mouseenter", function() {
 					$(this).addClass("active").siblings().removeClass("active");
 					var i = $(this).attr("index");
-					$($(this).parents(".floor-hd").next(".floor-bd:first").find(".content-right-img")[i]).css({
+					$($(this).parents(".floor-hd").next(".floor-bd:first").find(".caocao")[i]).css({
 						display: "block"
 					}).siblings().css({
 						display: "none"
@@ -72,7 +95,6 @@ require(["../model/config"], function() {
 						left: 0
 					})
 				})
-
 
 			});
 		});

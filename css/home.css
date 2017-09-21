@@ -294,6 +294,25 @@
 .content-right .fore4 {
   margin-top: 10px;
 }
+.content-right .content-right-tab .fore0,
+.content-right .content-right-tab .fore1,
+.content-right .content-right-tab .fore2,
+.content-right .content-right-tab .fore3,
+.content-right .content-right-tab .fore4 {
+  margin: 0;
+}
+.content-right .content-right-tab li {
+  width: 160px;
+  height: 205px;
+  padding: 10px 10px;
+  border-right: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f3f3f3;
+  float: left;
+}
+.content-right .content-right-tab li img {
+  width: 160px;
+  height: 160px;
+}
 
 .Content2 {
   width: 1200px;

@@ -1,5 +1,5 @@
 require(["../model/config"], function() {
-	require(["jquery", "tophtml", "jqueryui", "template", "jqcookie"], function($, top, ui, tem, cookie) {
+	require(["jquery", "tophtml", "jqueryui", "template", "jqcookie", "funpara"], function($, top, ui, tem, cookie, para) {
 		$("#top").load("sub/tophtml.html", function() {
 			top();
 			var t = setInterval(function() {
@@ -92,10 +92,31 @@ require(["../model/config"], function() {
 			$(".jia").click(function() {
 				$("#acount").val(parseInt($("#acount").val()) + 1)
 			})
+			//购物车抛物线
+			var eleFlyElement = document.getElementsByClassName("fly")[0],
+				eleShopCart = document.getElementById("right_cart");
+			// 抛物线运动的触发
+			console.log(eleFlyElement.getBoundingClientRect().left)
+			var numberItem = 0;
+			var myParabola = funParabola(eleFlyElement, eleShopCart, {
+				speed: 100,
+				curvature: 0.002,
+				complete: function() {
+					eleFlyElement.style.visibility = "hidden";
+					//eleShopCart.querySelector("span").innerHTML = ++numberItem;
+				}
+			});
 			$(".append").click(function() {
-
+				eleFlyElement.style.display = "block";
+				var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+					scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;
+				eleFlyElement.style.left = 0 + "px";
+				eleFlyElement.style.top = 0 + "px";
+				console.log(eleFlyElement.style.left, eleFlyElement.style.top)
+				eleFlyElement.style.visibility = "visible";
+				myParabola.position().move();
 				var box = $("<div>")
-				$("body").append($(box))
+				/*$("body").append($(box))
 				$(box).addClass("box").css({
 					left: $(".append").get(0).clientX,
 					top: $(".append").get(0).clientY
@@ -105,7 +126,7 @@ require(["../model/config"], function() {
 				}, 500).animate({
 					top: $(".cart").get(0).clientY,
 					right: 0
-				}, 500).remove()
+				}, 500).remove()*/
 				//var t = setTimeout(function() {
 				var count = $("#acount").val()
 				$("#right_cart").find("em").text(count);
@@ -117,67 +138,64 @@ require(["../model/config"], function() {
 				//clearTimeout(t)
 				//}, 1000)
 			})
+			//城市选择 代理数据
+			function city(data, place) {
+				//console.log(11)
+				for(var i = 0; i < data.length; i++) {
+					var li = $("<li>")
+					//console.log($(li))
+					$(place).append($(li))
+					$(li).text(data[i][1]).attr({
+						index: data[i][0]
+					})
+				}
+			}
 			$(".address").click(function() {
-				if($(".choose").css("display") == "block") {
-					$(".address").text($(".pri").text() + $(".city1").text())
-					$(".choose").hide()
-					return
-				} else {
-					$.ajax({
-						type: "get",
-						url: "../json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
-						async: true,
-						//AccessControlAllowOrigin:"*",
-						success: function(data) {
-							city(data["provinces"], ".province")
-							//console.log(data["provinces"][1])
+				$(".listyle").html("");
+					$.ajax('/shop/index.php?act=index&op=json_area&_=1505892344233', {
+						dataType: 'jsonp',
+						callback: 'callback',
+						success: data => {
+							//console.log(data)
+							city(data[0], ".province")
 						}
 					});
 					$(".choose").show()
 					$(".province").show().siblings().hide()
-				}
 			})
 
 			$(".province").click(function(e) {
 				var li = e.target;
-				//console.log($(li))
 				$(li).addClass("cur").siblings().removeClass("cur")
-				$(".pri").text($(li).text())
-				$.ajax({
-					type: "get",
-					url: "../json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
-					async: true,
-					//AccessControlAllowOrigin:"*",
-					success: function(data) {
-						var citylist = data.provinces.find(function(pro) {
-							return pro.name == $(".pri").text()
-						})
-						city(citylist.cities, ".city")
-						//console.log($(".city").sib)
+				$(".pri").text($(li).text());
+				var index = parseInt($(li).attr("index")) ;
+				$.ajax('/shop/index.php?act=index&op=json_area&_=1505892344233', {
+					dataType: 'jsonp',
+					callback: 'callback',
+					success: data => {
+						//console.log(data[index])
+						city(data[index], ".city");
 						$(".city").show().siblings().hide()
 						$(".city").find("li:first").addClass("cur")
+						$(".city1").addClass("cho").siblings().removeClass("cho")
 						$(".city1").text($(".city li:first").text())
 					}
 				});
 			})
 			$(".city").click(function(e) {
 				var li = e.target;
-				//console.log($(li))
 				$(li).addClass("cur").siblings().removeClass("cur")
 				$(".city1").text($(li).text())
-				$.ajax({
-					type: "get",
-					url: "../json/where.json", //http://www.mango918.com/shop/index.php?act=index&op=json_area
-					async: true,
-					//AccessControlAllowOrigin:"*",
-					success: function(data) {
-						var dislist = data.provinces.find(function(pro) {
-							return pro.name == $(".pri").text()
-						}).cities.find(function(cit) {
-							return cit.name == $(".city1").text()
-						}).districts;
-						city(dislist, ".distrct")
+				var index = parseInt($(li).attr("index"));
+				$.ajax('/shop/index.php?act=index&op=json_area&_=1505892344233', {
+					dataType: 'jsonp',
+					callback: 'callback',
+					success: data => {
+						//console.log(data[index])
+						city(data[index], ".distrct");
 						$(".distrct").show().siblings().hide()
+						$(".distrct").find("li:first").addClass("cur")
+						$(".dist").addClass("cho").siblings().removeClass("cho")
 						$(".dist").text($(".distrct li:first").text())
 					}
 				});
@@ -186,13 +204,17 @@ require(["../model/config"], function() {
 				var li = e.target
 				$(".dist").text($(li).text())
 				$(li).addClass("cur").siblings().removeClass("cur")
-
+				$(".choose").hide()
+				$(".address").text($(".pri").text() + $(".city1").text())
+				$(".listyle").html("");
+                $(".pri").addClass("cho").siblings().removeClass("cho")
 			})
 			$(".addtop span").click(function() {
-
 				$(this).addClass("cho").siblings().removeClass("cho")
 				$("#comments-list").show()
 			})
+
+			//代理数据
 			$.ajax({
 				type: "get",
 				url: "/Product/GetHotSaleProduct?sid=1",
@@ -242,15 +264,6 @@ require(["../model/config"], function() {
 
 		})
 
-		function city(data, place) {
-			//console.log(11)
-			for(var i = 0; i < data.length; i++) {
-				var li = $("<li>")
-				//console.log($(li))
-				$(place).append($(li))
-				$(li).text(data[i].name)
-			}
-		}
 		$("#foot").load("sub/foothtml.html")
 	})
 })

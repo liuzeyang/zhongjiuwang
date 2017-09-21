@@ -856,7 +856,7 @@
 					<s></s>
 				</i>
 				<p>购物车</p>
-				<em>0</em>
+				<em class="count">0</em>
 			</li>
 			<s></s>
 			<li data-tag="asset" id="right_asset">
@@ -888,5 +888,88 @@
 				<span>返回顶部</span>
 			</li>
 		</ul>
+	</div>
+	<div class="side-content">
+		<div class="side-cart-c">
+			<div class="side-bd">
+				<input type="hidden" value="2" id="hidAuditStatus">
+				<input type="hidden" value="1" id="hidSaleStatus">
+				<div class="cart-top">
+					<label><input type="checkbox" name="s-checkAll" checked="" class="checkall">全选</label>
+					<a href="../html/mycart.html" title="">查看全部</a>
+				</div>
+				<div class="cart-list" tabindex="5000" style="height: 202px; overflow: hidden; outline: none;">
+					<ul id="side-cart-list">
+						<li>
+							<div class="cart-list-shop cl">
+								<input class="shopSelect" type="checkbox" value="1" name="checkShop" checked="">
+								<p>
+									<a href="/shop/home/1" target="_blank">中酒自营</a>
+								</p>
+								<span class="cart-shop-price" data-shoprice="5689.00">5689.00</span>
+							</div>
+							<div class="cart-list-goods cl">
+								<input class="checkbox" type="checkbox" data-cartid="16447" name="checkItem" value="1" checked="">
+								<a href="/product/detail/3568" title="拉菲传奇波尔多 750ml（6瓶装）" target="_blank">
+									<img src="http://img6.zhongjiu.cn/resourceb2b2c/Storage/Shop/1/Products/3568/1_50.png" alt="">
+								</a>
+								<div class="s-num"><span>9</span></div>
+								<div class="s-g-price">5391.00</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="side-bt">
+				<div class="cart-total">
+					<span class="total-money">￥<em id="s-total-money">5689.00</em></span>
+					<span class="total-num">已选<em id="s-total-num">11</em>件</span>
+				</div>
+				<input type="button" id="toSubmitOrder" value="购物车结算">
+			</div>
+		</div>
+
+		<div class="side-asset-c" style="display: none;">
+			<div class="side-hd">
+				<a class="side-close" title="关闭">&gt;&gt;</a>
+				<a href="/UserCenter?url=/userCoupon&amp;tar=userCoupon" target="_blank">资产中心</a>
+			</div>
+			<div class="side-bd" tabindex="5001" style="overflow: hidden; outline: none;">
+				<div class="side-asset-total cl">
+					<div>
+						<span>0</span>
+						<p>我的积分</p>
+					</div>
+					<div>
+						<span id="mycouponcount">0</span>
+						<p>优惠券</p>
+					</div>
+				</div>
+				<div class="side-asset-list" id="myCouponList">
+					<p>已领取的优惠券</p>
+					<ul></ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="side-atgoods-c" style="display: none;">
+			<div class="side-hd">
+				<a class="side-close" title="关闭">&gt;&gt;</a>
+				<a href="/UserCenter?url=/productConcern&amp;tar=productConcern" target="_blank">关注商品</a>
+			</div>
+			<div class="side-bd" tabindex="5002" style="overflow: hidden; outline: none;">
+				<ul class="side-goods-list cl">
+				</ul>
+			</div>
+		</div>
+		<div class="side-history-c" style="display: none;">
+			<div class="side-hd">
+				<a class="side-close" title="关闭">&gt;&gt;</a>
+				<a href="javascript:void(0)" target="_blank">浏览历史</a>
+			</div>
+			<div class="side-bd" tabindex="5003" style="overflow: hidden; outline: none;">
+				<ul class="side-goods-list cl" id="browsgoods"></ul>
+			</div>
+		</div>
 	</div>
 </div>

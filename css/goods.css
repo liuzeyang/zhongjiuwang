@@ -340,7 +340,7 @@ body {
   cursor: pointer;
 }
 .introright .passgoods .choosebtn .append {
-  margin-right: 50px;
+  margin-right: 35px;
   position: relative;
   font: 500 20px/38px "microsoft yahei";
   text-align: center;
@@ -350,7 +350,7 @@ body {
   line-height: 48px;
   background-color: #ff4d50;
   border-radius: 5px;
-  padding: 0 15px 0 25px;
+  padding: 0 15px 0 20px;
 }
 .introright .passgoods .choosebtn .append b {
   float: left;

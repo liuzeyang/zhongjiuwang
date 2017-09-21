@@ -882,3 +882,141 @@
   height: 48px;
   width: 102px;
 }
+
+.side-content {
+  background: #393939;
+  height: 100%;
+  display: none;
+  width: 220px;
+  float: left;
+}
+
+.side-cart-c {
+  position: relative;
+  height: 100%;
+  background: #E6E6E6;
+}
+.side-cart-c .side-bt {
+  bottom: 20px;
+  left: 0;
+  padding: 0 15px;
+  width: 190px;
+  position: absolute;
+  background-color: #e6e6e6;
+}
+.side-cart-c .cart-total {
+  color: #333;
+  line-height: 30px;
+}
+.side-cart-c .cart-total .total-money {
+  float: right;
+  color: #e3393c;
+}
+.side-cart-c .side-bd {
+  position: relative;
+}
+.side-cart-c .side-bd .cart-top {
+  height: 28px;
+  line-height: 28px;
+  background: #E6E6E6;
+}
+.side-cart-c .side-bd .cart-top lable {
+  margin-left: 13px;
+}
+.side-cart-c .side-bd .cart-top lable input {
+  vertical-align: middle;
+  margin-right: 3px;
+}
+.side-cart-c .side-bd .cart-top a {
+  float: right;
+  margin-right: 18px;
+}
+.side-cart-c .side-bd .cart-list li:first-child {
+  margin: 0;
+}
+.side-cart-c .side-bd .cart-list li {
+  margin-top: 16px;
+  margin-left: 8px;
+  background: #FFF;
+}
+.side-cart-c .side-bd .cart-list .cart-list-shop {
+  height: 29px;
+  line-height: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+.side-cart-c .side-bd .cart-list .cart-list-shop input[type="checkbox"] {
+  margin: 7px 5px;
+  float: left;
+}
+.side-cart-c .side-bd .cart-list .cart-list-shop p {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 5px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #333;
+  width: 119px;
+  float: left;
+}
+.side-cart-c .side-bd .cart-list .cart-list-shop span {
+  color: #999;
+  text-align: right;
+  padding: 5px 0;
+  width: 60px;
+  float: right;
+  border-bottom: 1px solid #e6e6e6;
+  margin-right: 10px;
+}
+
+.cart-list-goods input[type="checkbox"] {
+  margin: 20px 5px 5px;
+  float: left;
+}
+
+.cart-list .cart-list-goods {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.cart-list-goods img {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  float: left;
+}
+.cart-list-goods .s-num {
+  float: left;
+  width: 59px;
+  text-align: center;
+  margin-top: 21px;
+  line-height: 14px;
+}
+.cart-list-goods span {
+  padding: 0 6px;
+  line-height: 18px;
+  background-color: #E05558;
+  color: #fff;
+  border-radius: 3px;
+}
+.cart-list-goods .s-g-price {
+  float: left;
+  width: 60px;
+  float: left;
+  text-align: right;
+  line-height: 18px;
+  padding-top: 19px;
+}
+
+.side-cart-c .side-bt input[type="button"] {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  background-color: #e3393c;
+  border: 0 none;
+  cursor: pointer;
+}
