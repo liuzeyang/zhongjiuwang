@@ -31,8 +31,29 @@ define(["jquery"], function($) {
 		 	$(this).css({background:"#2a2a2a"})
 		 })
 		 //边框显示
-		 $("#right_cart").click(function(){
-		 	
-		 })
+		 $("#right_cart").on("mousedown", function(e) {
+				e.stopPropagation()
+				$(".side-content").show()
+				$(".right-side").css({
+					right: -200
+				}).animate({
+					right: 0
+				}, 300)
+			})
+			var count = $.cookie('goods');
+			$(".count").text(count);
+			$(".s-num span").text(count);
+			$("#shopping-amount").text(parseInt(count));
+			$(".s-g-price").text(parseInt(count)*599);
+			$(".cart-shop-price").text(parseInt(count)*599);
+			$("#s-total-money").text(parseInt(count)*599);
+			$(".s-total-num").text(count);
+			$(".checkall").click(function(){
+				if($(".checkall").attr("checked")=="checked"){
+					$(".cart-list").find("input").attr("checked","checked")
+				}else{
+					$(".cart-list").find("input").removeAttr("checked")
+				}
+			})
 	 }	
 })

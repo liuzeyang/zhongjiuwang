@@ -1,5 +1,5 @@
 require(["../model/config"], function() {
-	require(["jquery", "tophtml", "template"], function($, top, tem) {
+	require(["jquery", "tophtml", "template","jqcookie"], function($, top, tem,cookie) {
 		$("#top").load("sub/tophtml.html", function() {
 			top();
 			$(".category .mc").hide();

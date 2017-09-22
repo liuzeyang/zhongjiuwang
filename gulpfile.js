@@ -64,6 +64,13 @@ gulp.task("webserver", function() {
 						/*pathRewrite: {
 						  'api' : '' // remove base path
 						}*/
+					}),
+					proxy('/20150822',{
+						target: 'https://api.miaodiyun.com', // target host
+						changeOrigin: true, // needed for virtual hosted sites
+						/*pathRewrite: {
+						  'api' : '' // remove base path
+						}*/
 					})
 				]
 			})
